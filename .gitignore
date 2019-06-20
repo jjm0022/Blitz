@@ -3,3 +3,6 @@
 data/*
 extractions/*
 *.db
+
+__pycache__/*
+logs/*
