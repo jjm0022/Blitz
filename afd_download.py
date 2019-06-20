@@ -1,10 +1,7 @@
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
-import requests
-#import os
 from datetime import datetime
 from datetime import timedelta
-import logging
 import json
 from difflib import SequenceMatcher as SM
 from tqdm import tqdm
@@ -15,36 +12,6 @@ import sys
 '''
 Script used to download the AFD data (Most recent version JJM 4/3/2019)
 '''
-
-def create_logger():
-    # create logger for "Sample App"
-    logger = logging.getLogger('afd_download')
-    logger.setLevel(logging.DEBUG)
-
-    # create file handler which logs even debug messages
-    now = datetime.now()
-    fh = logging.FileHandler('logs/{0}.log'.format('afdDownload_{0}.log'.format(now.strftime('%Y%m%d'))), mode='w')
-    fh.setLevel(logging.DEBUG)
-
-    # create console handler with a higher log level 
-    ch = logging.StreamHandler(stream=sys.stdout)
-    ch.setLevel(logging.INFO)
-
-    # create formatter and add it to the handlers
-    file_formatter = logging.Formatter('[%(asctime)s] | %(levelname)8s: %(message)s ' +
-                                '(%(filename)s:%(lineno)s)', datefmt='%Y-%m-%d %H:%M:%S')
-    std_out_formatter = logging.Formatter('[%(asctime)s] | %(levelname)8s : %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
-
-    fh.setFormatter(file_formatter)
-    ch.setFormatter(std_out_formatter)
-
-    # add the handlers to the logger
-    logger.addHandler(ch)
-    logger.addHandler(fh)
-
-    return logger
-
-
 def createTable():
     '''
     '''
