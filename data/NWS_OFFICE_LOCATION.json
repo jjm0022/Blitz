@@ -1,0 +1,856 @@
+{
+    "ABQ": {
+        "Address": "2341 Clark Carr Loop SE, Albuquerque, NM 87106",
+        "City": "Albuquerque",
+        "Latitude": 35.03766565,
+        "Longitude": -106.622128353308,
+        "State": "New Mexico"
+    },
+    "ABR": {
+        "Address": "824 Brown County 14 South Aberdeen, SD 57401",
+        "City": "Aberdeen",
+        "Latitude": 45.4551648722744,
+        "Longitude": -98.4334000713161,
+        "State": "South Dakota"
+    },
+    "AFC": {
+        "Address": "6930 Sand Lake Rd, Anchorage, AK 99502",
+        "City": "Anchorage",
+        "Latitude": 61.15623995,
+        "Longitude": -149.984060465249,
+        "State": "Alaska"
+    },
+    "AFG": {
+        "Address": "930 N Koyukuk Dr, Fairbanks, AK 99709",
+        "City": "Fairbanks",
+        "Latitude": 64.8587866,
+        "Longitude": -147.8524762,
+        "State": "Alaska"
+    },
+    "AJK": {
+        "Address": "8500 Mendenhall Loop Rd, Juneau, AK 99801",
+        "City": "Juneau",
+        "Latitude": 58.3988314469532,
+        "Longitude": -134.573279364573,
+        "State": "Alaska"
+    },
+    "AKQ": {
+        "Address": "10009 General Mahone Hwy, Wakefield, VA 23888",
+        "City": "Wakefield",
+        "Latitude": 36.971728,
+        "Longitude": -76.984034,
+        "State": "Virginia"
+    },
+    "ALY": {
+        "Address": "251 Fuller Rd B-300, Albany, NY 12203",
+        "City": "Albany",
+        "Latitude": 42.690669944279,
+        "Longitude": -73.8341209708707,
+        "State": "New York"
+    },
+    "AMA": {
+        "Address": "1900 English Rd, Amarillo, TX 79108",
+        "City": "Amarillo",
+        "Latitude": 35.233128,
+        "Longitude": -101.709111,
+        "State": "Texas"
+    },
+    "APX": {
+        "Address": "8800 Passenheim Road Gaylord, MI 49735",
+        "City": "Gaylord",
+        "Latitude": 44.9077357720166,
+        "Longitude": -84.7196138804592,
+        "State": "Michigan"
+    },
+    "ARX": {
+        "Address": "N2788 County Road FA Lacrosse, WI 54601",
+        "City": "La Crosse",
+        "Latitude": 43.8223910557179,
+        "Longitude": -91.1940414501149,
+        "State": "Wisconsin"
+    },
+    "BGM": {
+        "Address": "32 Dawes Dr, Johnson City, NY 13790",
+        "City": "Binghamton",
+        "Latitude": 42.2106496295691,
+        "Longitude": -75.9852176511244,
+        "State": "New York"
+    },
+    "BIS": {
+        "Address": "2301 University Drive Building 27 Bismarck, ND 58504",
+        "City": "Bismarck",
+        "Latitude": 46.7657766209277,
+        "Longitude": -100.763216509048,
+        "State": "North Dakota"
+    },
+    "BMX": {
+        "Address": "465 Weather Vane Rd, Calera, AL 35040",
+        "City": "Birmingham",
+        "Latitude": 33.1812418064202,
+        "Longitude": -86.7827258170713,
+        "State": "Alabama"
+    },
+    "BOI": {
+        "Address": "NIFC Building 3807, 3833 Development Ave, Boise, ID 83705",
+        "City": "Boise",
+        "Latitude": 43.5667137871462,
+        "Longitude": -116.210190399905,
+        "State": "Idaho"
+    },
+    "BOU": {
+        "Address": "325 Broadway Boulder, CO 80305",
+        "City": "Denver/Boulder",
+        "Latitude": 39.99506805,
+        "Longitude": -105.262682064806,
+        "State": "Colorado"
+    },
+    "BOX": {
+        "Address": "445 Myles Standish Blvd, Taunton, MA 02780",
+        "City": "Boston",
+        "Latitude": 41.9480775696203,
+        "Longitude": -71.1409035063291,
+        "State": "Massachusetts"
+    },
+    "BRO": {
+        "Address": "20 S Vermillion Ave, Brownsville, TX 78521",
+        "City": "Brownsville",
+        "Latitude": 25.91049,
+        "Longitude": -97.416822,
+        "State": "Texas"
+    },
+    "BTV": {
+        "Address": "1200 Airport Dr, South Burlington, VT 05403",
+        "City": "Burlington",
+        "Latitude": 44.4731752259719,
+        "Longitude": -73.1587205008125,
+        "State": "Vermont"
+    },
+    "BUF": {
+        "Address": "587 Aero Dr, Buffalo, NY 14225",
+        "City": "Buffalo",
+        "Latitude": 42.9434541,
+        "Longitude": -78.7043041,
+        "State": "New York"
+    },
+    "BYZ": {
+        "Address": "2170 Overland Ave, Billings, MT 59102",
+        "City": "Billings",
+        "Latitude": 45.7514621421748,
+        "Longitude": -108.569354788826,
+        "State": "Montana"
+    },
+    "CAE": {
+        "Address": "2909 Aviation Way West, Columbia, SC 29170",
+        "City": "Columbia",
+        "Latitude": 33.9457558814556,
+        "Longitude": -81.1219022829132,
+        "State": "South Carolina"
+    },
+    "CAR": {
+        "Address": "810 Main St, Caribou, ME 04736",
+        "City": "Caribou",
+        "Latitude": 46.8724299873835,
+        "Longitude": -68.0124914111184,
+        "State": "Maine"
+    },
+    "CHS": {
+        "Address": "5777 S Aviation Ave, North Charleston, SC 29406",
+        "City": "Charleston",
+        "Latitude": 32.8996007761953,
+        "Longitude": -80.0300788228923,
+        "State": "South Carolina"
+    },
+    "CLE": {
+        "Address": "5301 W Hangar Rd, Cleveland, OH 44135",
+        "City": "Cleveland",
+        "Latitude": 41.4173830640678,
+        "Longitude": -81.8557769139134,
+        "State": "Ohio"
+    },
+    "CRP": {
+        "Address": "426 Pinson Dr, Corpus Christi, TX 78406",
+        "City": "Corpus Christi",
+        "Latitude": 27.7793206988711,
+        "Longitude": -97.5067942950524,
+        "State": "Texas"
+    },
+    "CTP": {
+        "Address": "328 Innovation Blvd, State College, PA 16803",
+        "City": "State College",
+        "Latitude": 40.828766893742,
+        "Longitude": -77.847127545049,
+        "State": "Pennsylvania"
+    },
+    "CYS": {
+        "Address": "1301 Airport Parkway Cheyenne, WY 82001",
+        "City": "Cheyenne",
+        "Latitude": 41.15183355,
+        "Longitude": -104.8056619,
+        "State": "Wyoming"
+    },
+    "DDC": {
+        "Address": "104 Airport Road Dodge City, KS, 67801",
+        "City": "Dodge City",
+        "Latitude": 37.751631875,
+        "Longitude": -99.97080625,
+        "State": "Kansas"
+    },
+    "DLH": {
+        "Address": "5027 Miller Trunk Highway Duluth, MN 55811",
+        "City": "Duluth",
+        "Latitude": 46.8341413666861,
+        "Longitude": -92.2063694287623,
+        "State": "Minnesota"
+    },
+    "DMX": {
+        "Address": "9607 NW Beaver Drive Johnston, IA 50131",
+        "City": "Des Moines",
+        "Latitude": 41.7398512019992,
+        "Longitude": -93.7265355854158,
+        "State": "Iowa"
+    },
+    "DTX": {
+        "Address": "9200 White Lake Road White Lake, MI 48386",
+        "City": "Detroit/Pontiac",
+        "Latitude": 42.6928975,
+        "Longitude": -83.5747768,
+        "State": "Michigan"
+    },
+    "DVN": {
+        "Address": "9050 Harrison Street (Davenport Municipal Airport) Davenport, IA, 52806",
+        "City": "Davenport/Quad Cities",
+        "Latitude": 41.6134185791681,
+        "Longitude": -90.5793609619148,
+        "State": "Iowa"
+    },
+    "EAX": {
+        "Address": "1803 North 7 Highway Pleasant Hill, MO 64080",
+        "City": "Kansas City/Pleasant Hill",
+        "Latitude": 38.8096967635635,
+        "Longitude": -94.2633766034154,
+        "State": "Missouri"
+    },
+    "EKA": {
+        "Address": "300 Startare Dr, Eureka, CA 95501",
+        "City": "Eureka",
+        "Latitude": 40.811643,
+        "Longitude": -124.158437,
+        "State": "California"
+    },
+    "EPZ": {
+        "Address": "7955 Airport Rd, Santa Teresa, NM 88008",
+        "City": "El Paso",
+        "Latitude": 31.8642889,
+        "Longitude": -106.6917783,
+        "State": "Texas"
+    },
+    "EWX": {
+        "Address": "2090 Airport Rd, New Braunfels, TX 78130",
+        "City": "Austin/San Antonio",
+        "Latitude": 29.708035,
+        "Longitude": -98.0323680188848,
+        "State": "Texas"
+    },
+    "FFC": {
+        "Address": "4 Falcon Dr, Peachtree City, GA 30269",
+        "City": "Peachtree City/Atlanta",
+        "Latitude": 33.3617208237288,
+        "Longitude": -84.5673616374423,
+        "State": "Georgia"
+    },
+    "FGF": {
+        "Address": "4797 Technology Circle Grand Forks, ND 58203",
+        "City": "Grand Forks",
+        "Latitude": 47.9202927446032,
+        "Longitude": -97.0962552378291,
+        "State": "North Dakota"
+    },
+    "FGZ": {
+        "Address": "Forest Service Rd 751B, Happy Jack, AZ 86024",
+        "City": "Flagstaff",
+        "Latitude": 34.3526930234562,
+        "Longitude": -111.155324412182,
+        "State": "Arizona"
+    },
+    "FSD": {
+        "Address": "26 Weather Lane Sioux Falls, SD 57104",
+        "City": "Sioux Falls",
+        "Latitude": 43.5802714018521,
+        "Longitude": -96.7301158482633,
+        "State": "South Dakota"
+    },
+    "FWD": {
+        "Address": "3401 Northern Cross Blvd, Fort Worth, TX 76137",
+        "City": "Fort Worth-Dallas",
+        "Latitude": 32.8349038,
+        "Longitude": -97.2987429255172,
+        "State": "Texas"
+    },
+    "GGW": {
+        "Address": "92 Airport Rd, Glasgow, MT 59230",
+        "City": "Glasgow",
+        "Latitude": 48.204667067267,
+        "Longitude": -106.613748196365,
+        "State": "Montana"
+    },
+    "GID": {
+        "Address": "6365 North Osborne Drive West Hastings, NE 68901",
+        "City": "Hastings",
+        "Latitude": 40.647566596864,
+        "Longitude": -98.3831611914772,
+        "State": "Nebraska"
+    },
+    "GJT": {
+        "Address": "2844 Aviators Way Grand Junction, CO 81506",
+        "City": "Grand Junction",
+        "Latitude": 39.1199779,
+        "Longitude": -108.525152597563,
+        "State": "Colorado"
+    },
+    "GLD": {
+        "Address": "920 Armory Road Goodland, KS 67735",
+        "City": "Goodland",
+        "Latitude": 39.365747,
+        "Longitude": -101.702701,
+        "State": "Kansas"
+    },
+    "GRB": {
+        "Address": "2485 South Point Road Green Bay, WI 54313",
+        "City": "Green Bay",
+        "Latitude": 44.4986214166667,
+        "Longitude": -88.11211775,
+        "State": "Wisconsin"
+    },
+    "GRR": {
+        "Address": "4899 South Complex Drive SE Grand Rapids, MI 49512",
+        "City": "Grand Rapids",
+        "Latitude": 42.8924648531702,
+        "Longitude": -85.545024058814,
+        "State": "Michigan"
+    },
+    "GSP": {
+        "Address": "1549 GSP Dr, Greer, SC 29651",
+        "City": "Greenville-Spartanburg",
+        "Latitude": 34.88341025,
+        "Longitude": -82.2201499976507,
+        "State": "South Carolina"
+    },
+    "GUM": {
+        "Address": "3232 Hueneme Rd, Barrigada, GU, 96913",
+        "City": "Tiyan",
+        "Latitude": 13.4757197,
+        "Longitude": 144.7912209,
+        "State": "Guam"
+    },
+    "GYX": {
+        "Address": "1 Weather Ln, Gray, ME 04039",
+        "City": "Gray/Portland",
+        "Latitude": 43.8947191661772,
+        "Longitude": -70.2561151085936,
+        "State": "Maine"
+    },
+    "HFO": {
+        "Address": "2525 Correa Rd # 250, Honolulu, HI 96822",
+        "City": "Honolulu",
+        "Latitude": 21.2986100618348,
+        "Longitude": -157.816489000258,
+        "State": "Hawaii"
+    },
+    "HGX": {
+        "Address": "1353 FM646, Dickinson, TX 77539",
+        "City": "Houston/Galveston",
+        "Latitude": 29.4724828746547,
+        "Longitude": -95.0831557849866,
+        "State": "Texas"
+    },
+    "HNX": {
+        "Address": "900 Foggy Bottom Rd, Hanford, CA 93230",
+        "City": "San Joaquin Valley/Hanford",
+        "Latitude": 36.3135949672652,
+        "Longitude": -119.631196004921,
+        "State": "California"
+    },
+    "HUN": {
+        "Address": "320 Sparkman Dr NW, Huntsville, AL 35805",
+        "City": "Huntsville",
+        "Latitude": 34.7242356407868,
+        "Longitude": -86.6442494349279,
+        "State": "Alabama"
+    },
+    "ICT": {
+        "Address": "2142 S. Tyler Road Wichita, KS 67209",
+        "City": "Wichita",
+        "Latitude": 37.6563700279437,
+        "Longitude": -97.4436840722831,
+        "State": "Kansas"
+    },
+    "ILM": {
+        "Address": "2015 Gardner Dr, Wilmington, NC 28405",
+        "City": "Wilmington",
+        "Latitude": 34.2765615817523,
+        "Longitude": -77.9121276522987,
+        "State": "North Carolina"
+    },
+    "ILN": {
+        "Address": "1901 OH-134, Wilmington, OH 45177",
+        "City": "Wilmington",
+        "Latitude": 39.4206458707148,
+        "Longitude": -83.8211373331128,
+        "State": "Ohio"
+    },
+    "ILX": {
+        "Address": "1362 State Route 10 Lincoln, IL 62656",
+        "City": "Lincoln",
+        "Latitude": 40.1492102,
+        "Longitude": -89.3503182,
+        "State": "Illinois"
+    },
+    "IND": {
+        "Address": "6900 West Hanna Avenue Indianapolis, IN 46241",
+        "City": "Indianapolis",
+        "Latitude": 39.7061538,
+        "Longitude": -86.2643358,
+        "State": "Indiana"
+    },
+    "IWX": {
+        "Address": "7506 E 850 N Syracuse, IN 46567",
+        "City": "Northern Indiana",
+        "Latitude": 41.3586776179916,
+        "Longitude": -85.7001404118958,
+        "State": "Indiana"
+    },
+    "JAN": {
+        "Address": "234 Weather Service Dr, Flowood, MS 39232",
+        "City": "Jackson",
+        "Latitude": 32.3197860168813,
+        "Longitude": -90.0812695136821,
+        "State": "Mississippi"
+    },
+    "JAX": {
+        "Address": "13701 Fang Dr, Jacksonville, FL 32218",
+        "City": "Jacksonville",
+        "Latitude": 30.485122,
+        "Longitude": -81.702572,
+        "State": "Florida"
+    },
+    "JKL": {
+        "Address": "1329 Airport Road Jackson, KY 41339",
+        "City": "Jackson",
+        "Latitude": 37.5915615900512,
+        "Longitude": -83.316313650547,
+        "State": "Kentucky"
+    },
+    "KEY": {
+        "Address": "1315 White St, Key West, FL 33040",
+        "City": "Key West",
+        "Latitude": 24.55267233501,
+        "Longitude": -81.7884832167736,
+        "State": "Florida"
+    },
+    "LBF": {
+        "Address": "5250 E. Lee Bird Drive North Platte, NE 69101",
+        "City": "North Platte",
+        "Latitude": 41.1333379406673,
+        "Longitude": -100.709197337165,
+        "State": "Nebraska"
+    },
+    "LCH": {
+        "Address": "500 Airport Blvd, Lake Charles, LA 70607",
+        "City": "Lake Charles",
+        "Latitude": 30.1234935398195,
+        "Longitude": -93.2201527322869,
+        "State": "Louisiana"
+    },
+    "LIX": {
+        "Address": "62300 Airport Rd. Slidell, LA 70460",
+        "City": "New Orleans/Baton Rouge",
+        "Latitude": 30.3114926,
+        "Longitude": -89.8258606,
+        "State": "Louisiana"
+    },
+    "LKN": {
+        "Address": "3720 Paradise Dr, Elko, NV 89801",
+        "City": "Elko",
+        "Latitude": 40.8588223553603,
+        "Longitude": -115.74133664464,
+        "State": "Nevada"
+    },
+    "LMK": {
+        "Address": "6201 Theiler Lane Louisville, KY 40229",
+        "City": "Louisville",
+        "Latitude": 38.11491015,
+        "Longitude": -85.6450656512131,
+        "State": "Kentucky"
+    },
+    "LOT": {
+        "Address": "333 West University Drive Romeoville, IL 60446",
+        "City": "Chicago",
+        "Latitude": 41.6068695015681,
+        "Longitude": -88.0824098020144,
+        "State": "Illinois"
+    },
+    "LOX": {
+        "Address": "520 N Elevar St, Oxnard, CA 93030",
+        "City": "Los Angeles/Oxnard",
+        "Latitude": 34.2053607527934,
+        "Longitude": -119.138054221858,
+        "State": "California"
+    },
+    "LSX": {
+        "Address": "12 Missouri Research Park Drive St. Charles, MO 63304",
+        "City": "St. Louis",
+        "Latitude": 38.6996340445798,
+        "Longitude": -90.682148574552,
+        "State": "Missouri"
+    },
+    "LUB": {
+        "Address": "2579 S Loop 289 #100, Lubbock, TX 79423",
+        "City": "Lubbock",
+        "Latitude": 33.528549327831,
+        "Longitude": -101.876166914064,
+        "State": "Texas"
+    },
+    "LWX": {
+        "Address": "43858 Weather Service Road, Sterling, VA 20166",
+        "City": "Baltimore/Washington",
+        "Latitude": 38.9765638590976,
+        "Longitude": -77.4861269536686,
+        "State": "Virginia"
+    },
+    "LZK": {
+        "Address": "8400 Remount Rd, North Little Rock, AR 72118",
+        "City": "North Little Rock",
+        "Latitude": 34.8384236065735,
+        "Longitude": -92.2611395521152,
+        "State": "Arkansas"
+    },
+    "MAF": {
+        "Address": "2500 Challenger Dr, Midland, TX 79706",
+        "City": "Midland/Odessa",
+        "Latitude": 31.9405233128243,
+        "Longitude": -102.188167425769,
+        "State": "Texas"
+    },
+    "MEG": {
+        "Address": "7777 Walnut Grove Rd #1, Memphis, TN 38120",
+        "City": "Memphis",
+        "Latitude": 35.1328575617073,
+        "Longitude": -89.8043147135527,
+        "State": "Tennessee"
+    },
+    "MFL": {
+        "Address": "11691 SW 17th Street Miami, FL 33165",
+        "City": "Miami",
+        "Latitude": 25.7537841,
+        "Longitude": -80.3484424454128,
+        "State": "Florida"
+    },
+    "MFR": {
+        "Address": "4003 Cirrus Dr, Medford, OR 97504",
+        "City": "Medford",
+        "Latitude": 42.3755078252427,
+        "Longitude": -122.882231174757,
+        "State": "Oregon"
+    },
+    "MHX": {
+        "Address": "533 Roberts Rd, Newport, NC 28570",
+        "City": "Newport/Morehead City",
+        "Latitude": 34.77632345,
+        "Longitude": -76.87661885,
+        "State": "North Carolina"
+    },
+    "MKX": {
+        "Address": "N3533 Hardscrabble Road Dousman, WI 53118",
+        "City": "Milwaukee/Sullivan",
+        "Latitude": 42.967703984599,
+        "Longitude": -88.5491450800742,
+        "State": "Wisconsin"
+    },
+    "MLB": {
+        "Address": "421 Croton Rd, Melbourne, FL 32901",
+        "City": "Melbourne",
+        "Latitude": 28.1138714117647,
+        "Longitude": -80.6548002352941,
+        "State": "Florida"
+    },
+    "MOB": {
+        "Address": "8400 Airport Blvd #11, Mobile, AL 36608",
+        "City": "Mobile/Pensacola",
+        "Latitude": 30.6755502588293,
+        "Longitude": -88.2460144582259,
+        "State": "Alabama"
+    },
+    "MPX": {
+        "Address": "1733 Lake Drive West Chanhassen, MN, 55317",
+        "City": "Chanhassen/Twin Cities",
+        "Latitude": 44.851993,
+        "Longitude": -93.558973,
+        "State": "Minnesota"
+    },
+    "MQT": {
+        "Address": "112 Airpark Drive South Negaunee, MI 49866",
+        "City": "Marquette",
+        "Latitude": 46.5310514004762,
+        "Longitude": -87.5519787063143,
+        "State": "Michigan"
+    },
+    "MRX": {
+        "Address": "5974 Commerce Blvd, Talbott, TN 37877",
+        "City": "Morristown/Knoxville",
+        "Latitude": 36.1656840903535,
+        "Longitude": -83.4015759830755,
+        "State": "Tennessee"
+    },
+    "MSO": {
+        "Address": "6633 Aviation Way, Missoula, MT 59808",
+        "City": "Missoula",
+        "Latitude": 46.922138,
+        "Longitude": -114.084411,
+        "State": "Montana"
+    },
+    "MTR": {
+        "Address": "21 Grace Hopper Ave, Monterey, CA 93943",
+        "City": "San Francisco Bay Area/Monterey",
+        "Latitude": 36.5931368,
+        "Longitude": -121.8543597,
+        "State": "California"
+    },
+    "OAX": {
+        "Address": "6707 North 288th Street Valley, NE 68064",
+        "City": "Omaha/Valley",
+        "Latitude": 41.3222307,
+        "Longitude": -96.3679161,
+        "State": "Nebraska"
+    },
+    "OHX": {
+        "Address": "500 Weather Station Rd, Old Hickory, TN 37138",
+        "City": "Nashville",
+        "Latitude": 36.2474359724593,
+        "Longitude": -86.5672663686141,
+        "State": "Tennessee"
+    },
+    "OKX": {
+        "Address": "175 Brookhaven Ave, Upton, NY 11973",
+        "City": "New York/Upton",
+        "Latitude": 40.8665823,
+        "Longitude": -72.87316,
+        "State": "New York"
+    },
+    "OTX": {
+        "Address": "2601 N Rambo Rd, Spokane, WA 99224",
+        "City": "Spokane",
+        "Latitude": 47.679256,
+        "Longitude": -117.625345,
+        "State": "Washington"
+    },
+    "OUN": {
+        "Address": "120 David L. Boren Blvd. Suite 2400, Norman, OK 73072",
+        "City": "Norman/Oklahoma City",
+        "Latitude": 35.1829350362576,
+        "Longitude": -97.4406528664159,
+        "State": "Oklahoma"
+    },
+    "PAH": {
+        "Address": "8250 Kentucky Highway 3520 West Paducah, KY 42086",
+        "City": "Paducah",
+        "Latitude": 37.0685607330304,
+        "Longitude": -88.772145444995,
+        "State": "Kentucky"
+    },
+    "PBZ": {
+        "Address": "192 Shafer Rd, Coraopolis, PA 15108",
+        "City": "Pittsburgh",
+        "Latitude": 40.5319664074649,
+        "Longitude": -80.2171314283847,
+        "State": "Pennsylvania"
+    },
+    "PDT": {
+        "Address": "2001 NW 56th St, Pendleton, OR 97801",
+        "City": "Pendleton",
+        "Latitude": 45.6903982648748,
+        "Longitude": -118.851754981194,
+        "State": "Oregon"
+    },
+    "PHI": {
+        "Address": "732 Woodlane Rd, Mt Holly, NJ 08060",
+        "City": "Mount Holly/Philadelphia",
+        "Latitude": 40.0136555787264,
+        "Longitude": -74.8171225804677,
+        "State": "New Jersey"
+    },
+    "PIH": {
+        "Address": "1945 Beechcraft Ave, Pocatello, ID 83204",
+        "City": "Pocatello",
+        "Latitude": 42.902648,
+        "Longitude": -112.5869105,
+        "State": "Idaho"
+    },
+    "PQR": {
+        "Address": "5241 NE 122nd Ave, Portland, OR 97230",
+        "City": "Portland",
+        "Latitude": 45.56103735,
+        "Longitude": -122.53825305116,
+        "State": "Oregon"
+    },
+    "PSR": {
+        "Address": "1521 N Project Dr, Tempe, AZ 85281",
+        "City": "Phoenix",
+        "Latitude": 33.44639865,
+        "Longitude": -111.951877730005,
+        "State": "Arizona"
+    },
+    "PUB": {
+        "Address": "3 Eaton Way Pueblo, CO 81001",
+        "City": "Pueblo",
+        "Latitude": 38.2790241,
+        "Longitude": -104.5237887,
+        "State": "Colorado"
+    },
+    "RAH": {
+        "Address": "1005 Capability Dr #300, Raleigh, NC 27606",
+        "City": "Raleigh",
+        "Latitude": 35.7712903180586,
+        "Longitude": -78.6812507766128,
+        "State": "North Carolina"
+    },
+    "REV": {
+        "Address": "2350 Raggio Pkwy, Reno, NV 89512",
+        "City": "Reno",
+        "Latitude": 39.5697433,
+        "Longitude": -119.7993342,
+        "State": "Nevada"
+    },
+    "RIW": {
+        "Address": "12744 West US Highway 26 Riverton, WY 82501",
+        "City": "Riverton",
+        "Latitude": 43.0246300000704,
+        "Longitude": -108.399177601691,
+        "State": "Wyoming"
+    },
+    "RLX": {
+        "Address": "400 Parkway Rd, Charleston, WV 25309",
+        "City": "Charleston",
+        "Latitude": 38.3136277208473,
+        "Longitude": -81.718133888,
+        "State": "West Virginia"
+    },
+    "RNK": {
+        "Address": "1750 Forecast Dr, Blacksburg, VA 24060",
+        "City": "Blacksburg",
+        "Latitude": 37.2040743,
+        "Longitude": -80.4142035,
+        "State": "Virginia"
+    },
+    "SEW": {
+        "Address": "7600 Sand Point Way NE, Seattle, WA 98115",
+        "City": "Seattle",
+        "Latitude": 47.6861496,
+        "Longitude": -122.2608178,
+        "State": "Washington"
+    },
+    "SGF": {
+        "Address": "5805 West Highway EE Springfield, MO 65802",
+        "City": "Springfield",
+        "Latitude": 37.2304270023609,
+        "Longitude": -93.4035271776153,
+        "State": "Missouri"
+    },
+    "SGX": {
+        "Address": "11440 W Bernardo Ct #230, San Diego, CA 92127",
+        "City": "San Diego",
+        "Latitude": 33.0225410435891,
+        "Longitude": -117.083191828983,
+        "State": "California"
+    },
+    "SHV": {
+        "Address": "5655 Hollywood Ave, Shreveport, LA 71109",
+        "City": "Shreveport",
+        "Latitude": 32.4560034452179,
+        "Longitude": -93.8417813972435,
+        "State": "Louisiana"
+    },
+    "SJT": {
+        "Address": "7654 Knickerbocker Rd, San Angelo, TX 76904",
+        "City": "San Angelo",
+        "Latitude": 31.3734753219449,
+        "Longitude": -100.490443866654,
+        "State": "Texas"
+    },
+    "SJU": {
+        "Address": "5000 Expreso Rom\u00e1n Baldorioty de Castro, Carolina, PR 00979",
+        "City": "San Juan",
+        "Latitude": 18.4443021912473,
+        "Longitude": -66.0301081842401,
+        "State": "Puerto Rico"
+    },
+    "SLC": {
+        "Address": "2242 W North Temple, Salt Lake City, UT 84116",
+        "City": "Salt Lake City",
+        "Latitude": 40.7715889281025,
+        "Longitude": -111.954622272411,
+        "State": "Utah"
+    },
+    "STO": {
+        "Address": "3310 El Camino Ave # 228, Sacramento, CA 95821",
+        "City": "Sacramento",
+        "Latitude": 38.6096325765734,
+        "Longitude": -121.386198880264,
+        "State": "California"
+    },
+    "TAE": {
+        "Address": "1017 Academic Way, Tallahassee, FL 3230",
+        "City": "Tallahassee",
+        "Latitude": 30.4458438,
+        "Longitude": -84.2982537,
+        "State": "Florida"
+    },
+    "TBW": {
+        "Address": "2525 14th Ave SE, Ruskin, FL 33570",
+        "City": "Tampa",
+        "Latitude": 27.7056915704698,
+        "Longitude": -82.4005560134228,
+        "State": "Florida"
+    },
+    "TFX": {
+        "Address": "5324 Tri Hill Frontage Rd, Great Falls, MT 59404",
+        "City": "Great Falls",
+        "Latitude": 47.4618327036809,
+        "Longitude": -111.386519002333,
+        "State": "Montana"
+    },
+    "TOP": {
+        "Address": "1116 NE Strait Avenue Topeka, KS 66616",
+        "City": "Topeka",
+        "Latitude": 39.071988240264,
+        "Longitude": -95.6312973121566,
+        "State": "Kansas"
+    },
+    "TSA": {
+        "Address": "10159 E 11th St #300, Tulsa, OK 74128",
+        "City": "Tulsa",
+        "Latitude": 36.1485922604646,
+        "Longitude": -95.8631570619719,
+        "State": "Oklahoma"
+    },
+    "TWC": {
+        "Address": "520 N Park Ave #304, Tucson, AZ 85719",
+        "City": "Tucson",
+        "Latitude": 32.2285280261734,
+        "Longitude": -110.956181790687,
+        "State": "Arizona"
+    },
+    "UNR": {
+        "Address": "300 East Signal Drive Rapid City, SD 57701",
+        "City": "Rapid City",
+        "Latitude": 44.07299125,
+        "Longitude": -103.2103366,
+        "State": "South Dakota"
+    },
+    "VEF": {
+        "Address": "7851 Dean Martin Dr, Las Vegas, NV 89139",
+        "City": "Las Vegas",
+        "Latitude": 36.0471238367347,
+        "Longitude": -115.183672,
+        "State": "Nevada"
+    }
+}

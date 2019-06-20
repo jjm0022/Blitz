@@ -1,0 +1,612 @@
+{
+    "BOX": {
+        "City": "Boston", 
+        "State": "Massachusetts", 
+        "Address": "445 Myles Standish Blvd, Taunton, MA 02780"
+    }, 
+    "GSP": {
+        "City": "Greenville-Spartanburg", 
+        "State": "South Carolina", 
+        "Address": "1549 GSP Dr, Greer, SC 29651"
+    }, 
+    "EPZ": {
+        "City": "El Paso", 
+        "State": "Texas", 
+        "Address": "7955 Airport Rd, Santa Teresa, NM 88008"
+    }, 
+    "FWD": {
+        "City": "Fort Worth-Dallas", 
+        "State": "Texas", 
+        "Address": "3401 Northern Cross Blvd, Fort Worth, TX 76137"
+    }, 
+    "BOU": {
+        "City": "Denver/Boulder", 
+        "State": "Colorado", 
+        "Address": "325 Broadway Boulder, CO 80305"
+    }, 
+    "BOI": {
+        "City": "Boise", 
+        "State": "Idaho", 
+        "Address": "NIFC Building 3807, 3833 Development Ave, Boise, ID 83705"
+    }, 
+    "PAH": {
+        "City": "Paducah", 
+        "State": "Kentucky", 
+        "Address": "8250 Kentucky Highway 3520 West Paducah, KY 42086"
+    }, 
+    "CTP": {
+        "City": "State College", 
+        "State": "Pennsylvania", 
+        "Address": "328 Innovation Blvd, State College, PA 16803"
+    }, 
+    "LIX": {
+        "City": "New Orleans/Baton Rouge", 
+        "State": "Louisiana", 
+        "Address": "62300 Airport Rd. Slidell, LA 70460"
+    }, 
+    "OAX": {
+        "City": "Omaha/Valley", 
+        "State": "Nebraska", 
+        "Address": "6707 North 288th Street Valley, NE 68064"
+    }, 
+    "PIH": {
+        "City": "Pocatello", 
+        "State": "Idaho", 
+        "Address": "1945 Beechcraft Ave, Pocatello, ID 83204"
+    }, 
+    "FGZ": {
+        "City": "Flagstaff", 
+        "State": "Arizona", 
+        "Address": "Forest Service Rd 751B, Happy Jack, AZ 86024"
+    }, 
+    "RIW": {
+        "City": "Riverton", 
+        "State": "Wyoming", 
+        "Address": "12744 West US Highway 26 Riverton, WY 82501"
+    }, 
+    "RAH": {
+        "City": "Raleigh", 
+        "State": "North Carolina", 
+        "Address": "1005 Capability Dr #300, Raleigh, NC 27606"
+    }, 
+    "TAE": {
+        "City": "Tallahassee", 
+        "State": "Florida", 
+        "Address": "1017 Academic Way, Tallahassee, FL 3230"
+    }, 
+    "OHX": {
+        "City": "Nashville", 
+        "State": "Tennessee", 
+        "Address": "500 Weather Station Rd, Old Hickory, TN 37138"
+    }, 
+    "MQT": {
+        "City": "Marquette", 
+        "State": "Michigan", 
+        "Address": "112 Airpark Drive South Negaunee, MI 49866"
+    }, 
+    "LBF": {
+        "City": "North Platte", 
+        "State": "Nebraska", 
+        "Address": "5250 E. Lee Bird Drive North Platte, NE 69101"
+    }, 
+    "FGF": {
+        "City": "Grand Forks", 
+        "State": "North Dakota", 
+        "Address": "4797 Technology Circle Grand Forks, ND 58203"
+    }, 
+    "IWX": {
+        "City": "Northern Indiana", 
+        "State": "Indiana", 
+        "Address": "7506 E 850 N Syracuse, IN 46567"
+    }, 
+    "MRX": {
+        "City": "Morristown/Knoxville", 
+        "State": "Tennessee", 
+        "Address": "5974 Commerce Blvd, Talbott, TN 37877"
+    }, 
+    "JAX": {
+        "City": "Jacksonville", 
+        "State": "Florida", 
+        "Address": "13701 Fang Dr, Jacksonville, FL 32218"
+    }, 
+    "REV": {
+        "City": "Reno", 
+        "State": "Nevada", 
+        "Address": "2350 Raggio Pkwy, Reno, NV 89512"
+    }, 
+    "APX": {
+        "City": "Gaylord", 
+        "State": "Michigan", 
+        "Address": "8800 Passenheim Road Gaylord, MI 49735"
+    }, 
+    "BGM": {
+        "City": "Binghamton", 
+        "State": "New York", 
+        "Address": "32 Dawes Dr, Johnson City, NY 13790"
+    }, 
+    "JAN": {
+        "City": "Jackson", 
+        "State": "Mississippi", 
+        "Address": "234 Weather Service Dr, Flowood, MS 39232"
+    }, 
+    "CHS": {
+        "City": "Charleston", 
+        "State": "South Carolina", 
+        "Address": "5777 S Aviation Ave, North Charleston, SC 29406"
+    }, 
+    "PHI": {
+        "City": "Mount Holly/Philadelphia", 
+        "State": "New Jersey", 
+        "Address": "732 Woodlane Rd, Mt Holly, NJ 08060"
+    }, 
+    "PQR": {
+        "City": "Portland", 
+        "State": "Oregon", 
+        "Address": "5241 NE 122nd Ave, Portland, OR 97230"
+    }, 
+    "MAF": {
+        "City": "Midland/Odessa", 
+        "State": "Texas", 
+        "Address": "2500 Challenger Dr, Midland, TX 79706"
+    }, 
+    "SGF": {
+        "City": "Springfield", 
+        "State": "Missouri", 
+        "Address": "5805 West Highway EE Springfield, MO 65802"
+    }, 
+    "FFC": {
+        "City": "Peachtree City/Atlanta", 
+        "State": "Georgia", 
+        "Address": "4 Falcon Dr, Peachtree City, GA 30269"
+    }, 
+    "LKN": {
+        "City": "Elko", 
+        "State": "Nevada", 
+        "Address": "3720 Paradise Dr, Elko, NV 89801"
+    }, 
+    "CRP": {
+        "City": "Corpus Christi", 
+        "State": "Texas", 
+        "Address": "426 Pinson Dr, Corpus Christi, TX 78406"
+    }, 
+    "GJT": {
+        "City": "Grand Junction", 
+        "State": "Colorado", 
+        "Address": "2844 Aviators Way Grand Junction, CO 81506"
+    }, 
+    "GUM": {
+        "City": "Tiyan", 
+        "State": "Guam", 
+        "Address": "3232 Hueneme Rd, Barrigada, GU, 96913"
+    }, 
+    "TSA": {
+        "City": "Tulsa", 
+        "State": "Oklahoma", 
+        "Address": "10159 E 11th St #300, Tulsa, OK 74128"
+    }, 
+    "DTX": {
+        "City": "Detroit/Pontiac", 
+        "State": "Michigan", 
+        "Address": "9200 White Lake Road White Lake, MI 48386"
+    }, 
+    "DMX": {
+        "City": "Des Moines", 
+        "State": "Iowa", 
+        "Address": "9607 NW Beaver Drive Johnston, IA 50131"
+    }, 
+    "AMA": {
+        "City": "Amarillo", 
+        "State": "Texas", 
+        "Address": "1900 English Rd, Amarillo, TX 79108"
+    }, 
+    "HUN": {
+        "City": "Huntsville", 
+        "State": "Alabama", 
+        "Address": "320 Sparkman Dr NW, Huntsville, AL 35805"
+    }, 
+    "MFL": {
+        "City": "Miami", 
+        "State": "Florida", 
+        "Address": "11691 SW 17th Street Miami, FL 33165"
+    }, 
+    "MFR": {
+        "City": "Medford", 
+        "State": "Oregon", 
+        "Address": "4003 Cirrus Dr, Medford, OR 97504"
+    }, 
+    "BMX": {
+        "City": "Birmingham", 
+        "State": "Alabama", 
+        "Address": "465 Weather Vane Rd, Calera, AL 35040"
+    }, 
+    "BUF": {
+        "City": "Buffalo", 
+        "State": "New York", 
+        "Address": "587 Aero Dr, Buffalo, NY 14225"
+    }, 
+    "LSX": {
+        "City": "St. Louis", 
+        "State": "Missouri", 
+        "Address": "12 Missouri Research Park Drive St. Charles, MO 63304"
+    }, 
+    "AFG": {
+        "City": "Fairbanks", 
+        "State": "Alaska", 
+        "Address": "930 N Koyukuk Dr, Fairbanks, AK 99709"
+    }, 
+    "GRR": {
+        "City": "Grand Rapids", 
+        "State": "Michigan", 
+        "Address": "4899 South Complex Drive SE Grand Rapids, MI 49512"
+    }, 
+    "SHV": {
+        "City": "Shreveport", 
+        "State": "Louisiana", 
+        "Address": "5655 Hollywood Ave, Shreveport, LA 71109"
+    }, 
+    "DLH": {
+        "City": "Duluth", 
+        "State": "Minnesota", 
+        "Address": "5027 Miller Trunk Highway Duluth, MN 55811"
+    }, 
+    "AFC": {
+        "City": "Anchorage", 
+        "State": "Alaska", 
+        "Address": "6930 Sand Lake Rd, Anchorage, AK 99502"
+    }, 
+    "EWX": {
+        "City": "Austin/San Antonio", 
+        "State": "Texas", 
+        "Address": "2090 Airport Rd, New Braunfels, TX 78130"
+    }, 
+    "GRB": {
+        "City": "Green Bay", 
+        "State": "Wisconsin", 
+        "Address": "2485 South Point Road Green Bay, WI 54313"
+    }, 
+    "MHX": {
+        "City": "Newport/Morehead City", 
+        "State": "North Carolina", 
+        "Address": "533 Roberts Rd, Newport, NC 28570"
+    }, 
+    "DDC": {
+        "City": "Dodge City", 
+        "State": "Kansas", 
+        "Address": "104 Airport Road Dodge City, KS, 67801"
+    }, 
+    "PBZ": {
+        "City": "Pittsburgh", 
+        "State": "Pennsylvania", 
+        "Address": "192 Shafer Rd, Coraopolis, PA 15108"
+    }, 
+    "RNK": {
+        "City": "Blacksburg", 
+        "State": "Virginia", 
+        "Address": "1750 Forecast Dr, Blacksburg, VA 24060"
+    }, 
+    "BTV": {
+        "City": "Burlington", 
+        "State": "Vermont", 
+        "Address": "1200 Airport Dr, South Burlington, VT 05403"
+    }, 
+    "OKX": {
+        "City": "New York/Upton", 
+        "State": "New York", 
+        "Address": "175 Brookhaven Ave, Upton, NY 11973"
+    }, 
+    "TBW": {
+        "City": "Tampa", 
+        "State": "Florida", 
+        "Address": "2525 14th Ave SE, Ruskin, FL 33570"
+    }, 
+    "LZK": {
+        "City": "North Little Rock", 
+        "State": "Arkansas", 
+        "Address": "8400 Remount Rd, North Little Rock, AR 72118"
+    }, 
+    "IND": {
+        "City": "Indianapolis", 
+        "State": "Indiana", 
+        "Address": "6900 West Hanna Avenue Indianapolis, IN 46241"
+    }, 
+    "MOB": {
+        "City": "Mobile/Pensacola", 
+        "State": "Alabama", 
+        "Address": "8400 Airport Blvd #11, Mobile, AL 36608"
+    }, 
+    "MPX": {
+        "City": "Chanhassen/Twin Cities", 
+        "State": "Minnesota", 
+        "Address": "1733 Lake Drive West Chanhassen, MN, 55317"
+    }, 
+    "DVN": {
+        "City": "Davenport/Quad Cities", 
+        "State": "Iowa", 
+        "Address": "9050 Harrison Street (Davenport Municipal Airport) Davenport, IA, 52806"
+    }, 
+    "FSD": {
+        "City": "Sioux Falls", 
+        "State": "South Dakota", 
+        "Address": "26 Weather Lane Sioux Falls, SD 57104"
+    }, 
+    "ILN": {
+        "City": "Wilmington", 
+        "State": "Ohio", 
+        "Address": "1901 OH-134, Wilmington, OH 45177"
+    }, 
+    "AKQ": {
+        "City": "Wakefield", 
+        "State": "Virginia", 
+        "Address": "10009 General Mahone Hwy, Wakefield, VA 23888"
+    }, 
+    "ILM": {
+        "City": "Wilmington", 
+        "State": "North Carolina", 
+        "Address": "2015 Gardner Dr, Wilmington, NC 28405"
+    }, 
+    "GLD": {
+        "City": "Goodland", 
+        "State": "Kansas", 
+        "Address": "920 Armory Road Goodland, KS 67735"
+    }, 
+    "EKA": {
+        "City": "Eureka", 
+        "State": "California", 
+        "Address": "300 Startare Dr, Eureka, CA 95501"
+    }, 
+    "LUB": {
+        "City": "Lubbock", 
+        "State": "Texas", 
+        "Address": "2579 S Loop 289 #100, Lubbock, TX 79423"
+    }, 
+    "HFO": {
+        "City": "Honolulu", 
+        "State": "Hawaii", 
+        "Address": "2525 Correa Rd # 250, Honolulu, HI 96822"
+    }, 
+    "HNX": {
+        "City": "San Joaquin Valley/Hanford", 
+        "State": "California", 
+        "Address": "900 Foggy Bottom Rd, Hanford, CA 93230"
+    }, 
+    "ILX": {
+        "City": "Lincoln", 
+        "State": "Illinois", 
+        "Address": "1362 State Route 10 Lincoln, IL 62656"
+    }, 
+    "SEW": {
+        "City": "Seattle", 
+        "State": "Washington", 
+        "Address": "7600 Sand Point Way NE, Seattle, WA 98115"
+    }, 
+    "GGW": {
+        "City": "Glasgow", 
+        "State": "Montana", 
+        "Address": "92 Airport Rd, Glasgow, MT 59230"
+    }, 
+    "OUN": {
+        "City": "Norman/Oklahoma City", 
+        "State": "Oklahoma", 
+        "Address": "120 David L. Boren Blvd. Suite 2400, Norman, OK 73072"
+    }, 
+    "JKL": {
+        "City": "Jackson", 
+        "State": "Kentucky", 
+        "Address": "1329 Airport Road Jackson, KY 41339"
+    }, 
+    "SLC": {
+        "City": "Salt Lake City", 
+        "State": "Utah", 
+        "Address": "2242 W North Temple, Salt Lake City, UT 84116"
+    }, 
+    "PSR": {
+        "City": "Phoenix", 
+        "State": "Arizona", 
+        "Address": "1521 N Project Dr, Tempe, AZ 85281"
+    }, 
+    "UNR": {
+        "City": "Rapid City", 
+        "State": "South Dakota", 
+        "Address": "300 East Signal Drive Rapid City, SD 57701"
+    }, 
+    "CLE": {
+        "City": "Cleveland", 
+        "State": "Ohio", 
+        "Address": "5301 W Hangar Rd, Cleveland, OH 44135"
+    }, 
+    "PDT": {
+        "City": "Pendleton", 
+        "State": "Oregon", 
+        "Address": "2001 NW 56th St, Pendleton, OR 97801"
+    }, 
+    "SJT": {
+        "City": "San Angelo", 
+        "State": "Texas", 
+        "Address": "7654 Knickerbocker Rd, San Angelo, TX 76904"
+    }, 
+    "SJU": {
+        "City": "San Juan", 
+        "State": "Puerto Rico", 
+        "Address": "5000 Expreso Rom\u00e1n Baldorioty de Castro, Carolina, PR 00979"
+    }, 
+    "VEF": {
+        "City": "Las Vegas", 
+        "State": "Nevada", 
+        "Address": "7851 Dean Martin Dr, Las Vegas, NV 89139"
+    }, 
+    "TFX": {
+        "City": "Great Falls", 
+        "State": "Montana", 
+        "Address": "5324 Tri Hill Frontage Rd, Great Falls, MT 59404"
+    }, 
+    "MEG": {
+        "City": "Memphis", 
+        "State": "Tennessee", 
+        "Address": "7777 Walnut Grove Rd #1, Memphis, TN 38120"
+    }, 
+    "PUB": {
+        "City": "Pueblo", 
+        "State": "Colorado", 
+        "Address": "3 Eaton Way Pueblo, CO 81001"
+    }, 
+    "BRO": {
+        "City": "Brownsville", 
+        "State": "Texas", 
+        "Address": "20 S Vermillion Ave, Brownsville, TX 78521"
+    }, 
+    "LMK": {
+        "City": "Louisville", 
+        "State": "Kentucky", 
+        "Address": "6201 Theiler Lane Louisville, KY 40229"
+    }, 
+    "RLX": {
+        "City": "Charleston", 
+        "State": "West Virginia", 
+        "Address": "400 Parkway Rd, Charleston, WV 25309"
+    }, 
+    "KEY": {
+        "City": "Key West", 
+        "State": "Florida", 
+        "Address": "1315 White St, Key West, FL 33040"
+    }, 
+    "ALY": {
+        "City": "Albany", 
+        "State": "New York", 
+        "Address": "251 Fuller Rd B-300, Albany, NY 12203"
+    }, 
+    "TWC": {
+        "City": "Tucson", 
+        "State": "Arizona", 
+        "Address": "520 N Park Ave #304, Tucson, AZ 85719"
+    }, 
+    "LWX": {
+        "City": "Baltimore/Washington", 
+        "State": "Virginia", 
+        "Address": "43858 Weather Service Road, Sterling, VA 20166"
+    }, 
+    "CAR": {
+        "City": "Caribou", 
+        "State": "Maine", 
+        "Address": "810 Main St, Caribou, ME 04736"
+    }, 
+    "TOP": {
+        "City": "Topeka", 
+        "State": "Kansas", 
+        "Address": "1116 NE Strait Avenue Topeka, KS 66616"
+    }, 
+    "MSO": {
+        "City": "Missoula", 
+        "State": "Montana", 
+        "Address": "6633 Aviation Way, Missoula, MT 59808"
+    }, 
+    "LOT": {
+        "City": "Chicago", 
+        "State": "Illinois", 
+        "Address": "333 West University Drive Romeoville, IL 60446"
+    }, 
+    "BYZ": {
+        "City": "Billings", 
+        "State": "Montana", 
+        "Address": "2170 Overland Ave, Billings, MT 59102"
+    }, 
+    "LOX": {
+        "City": "Los Angeles/Oxnard", 
+        "State": "California", 
+        "Address": "520 N Elevar St, Oxnard, CA 93030"
+    }, 
+    "CAE": {
+        "City": "Columbia", 
+        "State": "South Carolina", 
+        "Address": "2909 Aviation Way West, Columbia, SC 29170"
+    }, 
+    "MKX": {
+        "City": "Milwaukee/Sullivan", 
+        "State": "Wisconsin", 
+        "Address": "N3533 Hardscrabble Road Dousman, WI 53118"
+    }, 
+    "CYS": {
+        "City": "Cheyenne", 
+        "State": "Wyoming", 
+        "Address": "1301 Airport Parkway Cheyenne, WY 82001"
+    }, 
+    "SGX": {
+        "City": "San Diego", 
+        "State": "California", 
+        "Address": "11440 W Bernardo Ct #230, San Diego, CA 92127"
+    }, 
+    "EAX": {
+        "City": "Kansas City/Pleasant Hill", 
+        "State": "Missouri", 
+        "Address": "1803 North 7 Highway Pleasant Hill, MO 64080"
+    }, 
+    "BIS": {
+        "City": "Bismarck", 
+        "State": "North Dakota", 
+        "Address": "2301 University Drive Building 27 Bismarck, ND 58504"
+    }, 
+    "GYX": {
+        "City": "Gray/Portland", 
+        "State": "Maine", 
+        "Address": "1 Weather Ln, Gray, ME 04039"
+    }, 
+    "MLB": {
+        "City": "Melbourne", 
+        "State": "Florida", 
+        "Address": "421 Croton Rd, Melbourne, FL 32901"
+    }, 
+    "HGX": {
+        "City": "Houston/Galveston", 
+        "State": "Texas", 
+        "Address": "1353 FM646, Dickinson, TX 77539"
+    }, 
+    "MTR": {
+        "City": "San Francisco Bay Area/Monterey", 
+        "State": "California", 
+        "Address": "21 Grace Hopper Ave, Monterey, CA 93943"
+    }, 
+    "STO": {
+        "City": "Sacramento", 
+        "State": "California", 
+        "Address": "3310 El Camino Ave # 228, Sacramento, CA 95821"
+    }, 
+    "ABQ": {
+        "City": "Albuquerque", 
+        "State": "New Mexico", 
+        "Address": "2341 Clark Carr Loop SE, Albuquerque, NM 87106"
+    }, 
+    "ABR": {
+        "City": "Aberdeen", 
+        "State": "South Dakota", 
+        "Address": "824 Brown County 14 South Aberdeen, SD 57401"
+    }, 
+    "AJK": {
+        "City": "Juneau", 
+        "State": "Alaska", 
+        "Address": "8500 Mendenhall Loop Rd, Juneau, AK 99801"
+    }, 
+    "ICT": {
+        "City": "Wichita", 
+        "State": "Kansas", 
+        "Address": "2142 S. Tyler Road Wichita, KS 67209"
+    }, 
+    "ARX": {
+        "City": "La Crosse", 
+        "State": "Wisconsin", 
+        "Address": "N2788 County Road FA Lacrosse, WI 54601"
+    }, 
+    "OTX": {
+        "City": "Spokane", 
+        "State": "Washington", 
+        "Address": "2601 N Rambo Rd, Spokane, WA 99224"
+    }, 
+    "GID": {
+        "City": "Hastings", 
+        "State": "Nebraska", 
+        "Address": "6365 North Osborne Drive West Hastings, NE 68901"
+    }, 
+    "LCH": {
+        "City": "Lake Charles", 
+        "State": "Louisiana", 
+        "Address": "500 Airport Blvd, Lake Charles, LA 70607"
+    }
+}
