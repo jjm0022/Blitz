@@ -24,7 +24,6 @@ class Forecast(object):
     self.text = None
     self.current_time_stamp = None
     self.most_recent = self.db.getMostRecent(self.office)
-    
 
   def tableExists(self, table_name):
     '''
@@ -40,7 +39,6 @@ class Forecast(object):
     '''
     '''
     self.db.createTable(table_name)
-
 
   def parse(self, request):
     '''
