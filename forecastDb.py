@@ -9,18 +9,51 @@ class DB(object):
     self.db_path = db_path
     self.connection = lite.connect(self.db_path)
 
-  def createTable(self, table_name):
-      '''
-      '''
-      if table_name == 'AFD':
-        with self.connection:
-            cur = self.connection.cursor()
-            cur.execute('''CREATE TABLE IF NOT EXISTS AFD
-                          (uID TEXT, Office TEXT, TimeStamp TEXT, Year INT, Month INT, Day INT, Forecast TEXT)''')
-      else:
-        # TODO Figure out how to handle table creation
-        pass
+  def createFORE(self):
+    '''
+    '''
+    with self.connection:
+        cur = self.connection.cursor()
+        cur.execute(
+          '''CREATE TABLE IF NOT EXISTS Forecast
+             (uID TEXT, Office TEXT, TimeStamp TEXT, Year INT, Month INT, Day INT, Forecast TEXT)''')
+  
+  def createPOS(self):
+    '''
+    '''
+    with self.connection:
+      cur = self.connection.cursor()
+      cur.execute(
+        '''CREATE TABLE IF NOT EXISTS Part_of_Speech
+           (uID TEXT, Office TEXT, TimeStamp TEXT, Year INT, Month INT, Day INT,
+           Forecast TEXT)''')
 
+  def createENT(self):
+    '''
+    '''
+    with self.connection:
+      cur = self.connection.cursor()
+      cur.execute(
+        '''CREATE TABLE IF NOT EXISTS Entity
+           (uID TEXT, Office TEXT, TimeStamp TEXT, Year INT, Month INT, Day INT, Forecast TEXT)''')
+
+  def createCOUNT(self):
+    '''
+    '''
+    with self.connection:
+      cur = self.connection.cursor()
+      cur.execute(
+        '''CREATE TABLE IF NOT EXISTS Count
+           (uID TEXT, Office TEXT, TimeStamp TEXT, Year INT, Month INT, Day INT, Forecast TEXT)''')
+
+  def createPHRASE(self):
+    '''
+    '''
+    with self.connection:
+      cur = self.connection.cursor()
+      cur.execute(
+        '''CREATE TABLE IF NOT EXISTS Phrase
+           (uID TEXT, Office TEXT, TimeStamp TEXT, Year INT, Month INT, Day INT, Forecast TEXT)''')
 
   def insertRow(self, row_dict):
       '''
