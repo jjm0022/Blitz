@@ -23,9 +23,12 @@ class Pipeline(object):
     self.time_string = row['TimeStamp']
     self.time_ = parse(row['TomeStamp'])
     self.office = row['Office']
+    self.uid = row['uID']
     
     if preprocess:
       self._preProcess()
+
+    self.doc = self.getDoc(self.forecast)
     
 
   def _preProcess(self):
@@ -33,6 +36,11 @@ class Pipeline(object):
     Processes the text during initialization
     '''
     self.forecast = self.processText(self.forecast)
+
+  def getDoc(self, text):
+    '''
+    '''
+    return self._nlp(text)
 
   def connect(self, db_path):
     '''
@@ -64,9 +72,10 @@ class Pipeline(object):
     clean_text = re.sub(r'\s\.', '.', clean_text)
     clean_text = re.sub(r'\.{2,}', '.', clean_text)
     
-    self.forecast = text
+    return clean_text
 
-  def filterTrash(doc, numbers=True, stopwords=True):
+
+  def filterTrash(self, doc, numbers=False, stopwords=False):
     '''
     Returns true if token is not a word or number
     '''
@@ -78,9 +87,37 @@ class Pipeline(object):
         return False
 
     if (doc.is_punct or doc.is_space or doc.is_bracket or doc.is_quote or 
-        doc.like_url or doc.like_email):
+        doc.like_url or doc.like_email or doc.is_currency):
        return False
     else:
       return True
 
-  
+  def savePOS(self):
+    '''
+    '''
+    doc = self.doc
+    for token in doc:
+      if self.filterTrash(token) :
+        row = dict({
+                    'uid': self.uid,
+                    'Office': self.office,
+                    'TimeStamp': self.time_string,
+                    'Token': token.text,
+                    'POS': token.pos_,
+                    'Lemma': token.lemma_,
+                    'Tag': token.tag_
+        })
+    
+  def saveEntity(self):
+  '''
+  '''
+  doc = self.doc
+  for token in doc.ents:
+    row = dict({
+                'uid': self.uid,
+                'Office': self.office,
+                'TimeStamp': self.time_string,
+                'Token': token.text,
+                'Label': token.label_,
+                'Lemma': token.lemma_
+    })

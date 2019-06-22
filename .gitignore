@@ -3,5 +3,7 @@
 extractions/*
 *.db
 
+
+.vscode/*
 __pycache__/*
 logs/*
