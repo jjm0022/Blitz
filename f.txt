@@ -1,0 +1,223 @@
+
+000
+FXUS61 KPHI 201947
+AFDPHI
+
+Area Forecast Discussion
+National Weather Service Mount Holly NJ
+347 PM EDT Thu Jun 20 2019
+
+.SYNOPSIS...
+An area of low pressure will move to our north tonight, pulling a
+cold front across the area tonight, with a second front or surface
+trough moving across the area Friday morning. Steady northwest flow
+will develop Friday into Saturday, before high pressure briefly
+affects the area Saturday night, before shifting offshore and to our
+south Sunday. A warm front will lift across the area Sunday night
+into Monday as an area of low pressure moves across the Great Lakes
+region into southeast Canada. High pressure builds to our south
+through the middle of next week, while a surface trough develops
+across the east coast.
+
+&&
+
+.NEAR TERM /UNTIL 6 AM FRIDAY MORNING/...
+Several round of showers and thunderstorms can be expected this
+afternoon, this evening, and overnight across the area. Each is tied
+to a short wave/vorticity impulse that will move across the area at
+different times. The first is moving across the area this afternoon.
+The second will come by sunset this evening, while the third will
+come overnight around or after midnight.
+
+An area of low pressure will move to our north tonight, which will
+bring a cold front across the area. Until this front moves across
+the area, the airmass will remain very moist with PW values 1.75-
+2.00 inches. Meanwhile, CAPE values have reached 1,500-2,000+ J/kg
+for much of the area this afternoon now that the warm front has
+lifted north of the area. With mid level flow increasing to 30-40
+knots, bulk shear has increased to 35-45 knots. This should be
+sufficient to allow for some storms to become severe, potentially
+producing damaging winds and hail.
+
+As mentioned, the airmass remains very moist, so any showers and
+thunderstorms could produce very heavy rainfall in a short amount of
+time. An additional 1-3 inches is possible for some locations, which
+would produce additional flash flooding, especially those areas that
+received a lot of rainfall last night. Therefore the Flash Flood
+Watch remains in effect into the overnight hours.
+
+There is also a chance for patchy fog to develop later tonight,
+especially for northeast Pennsylvania and northern New Jersey where
+any winds become lighter and rain falls this afternoon and evening.
+We do not expect dense fog as there will likely be some wind and
+enough mixing with any additional short wave/vorticity impulses and
+showers moving through.
+
+&&
+
+.SHORT TERM /6 AM FRIDAY MORNING THROUGH SATURDAY NIGHT/...
+The low pressure will continue moving to our northeast offshore of
+New England through Friday. It will drag a surface trough across the
+area during the morning while a short wave/vorticity impulse moves
+across the area. As this impulse moves across during the morning,
+another round of showers will impact the area through the morning
+hours. There is very little, if any instability, so we do not expect
+thunderstorms. However, PW values remain 1.50-1.75 inches until the
+through moves through, so some showers could have a brief period of
+moderate to heavy rainfall. Once the showers move through the area,
+skies will begin to clear out and winds will become gusty as there
+will be a tight gradient with low pressure to our northeast and high
+pressure to our northwest. This will likely lead to be quite gusty
+during the day Friday, possibly reaching 20-30 mph.
+
+High pressure remains to our west for Friday night into Saturday,
+briefly building over the area Saturday night. This will keep dry
+conditions across the area through Friday night and Saturday. Winds
+will likely gust again Saturday, but not as gusty as Friday,
+generally 15-20 mph.
+
+&&
+
+.LONG TERM /SUNDAY THROUGH THURSDAY/...
+Overview...
+
+We will finally see some changes in the long term, as the mid-
+Atlantic will for a few days find itself downstream of a ridge over
+the Great Lakes and upstream a departing trough associated with a
+departing surface low. This will mean a well-deserved multi-day
+break in rainfall across our area, as high pressure builds in to the
+northwest and guides any ridge-riding convective disturbances to our
+south. And such disturbances will exist, as the ridging to our west
+is not very long in wavelength, and ample troughing continues to
+exist further west, which will keep the pattern active over the
+Plains and Midwest. That then raises questions for our weather going
+further into next week. It appears likely the ridge to our west will
+start to flatten out, with renewed troughing pushing into the Great
+Lakes. Thus, it is likely we will be dealing with another frontal
+system by early next week. Early indications are that we will not
+deal with such a prolonged and impactful stretch of unsettled
+weather. However, the one constant in the hemispheric pattern
+remains a seemingly unbreakable block over Greenland, which should
+briefly relax over the weekend but then looks to build right back in
+next week. Because of this, even as longwave ridging attempts to
+build over the CONUS, we continue to see frequent troughing over
+southern Canada with the trough unable to lift out. This leaves us
+vulnerable to additional frontal disturbances even in a pattern
+which is trying to trend warmer and drier overall. We may get there
+eventually, but for now after the break over the weekend it appears
+next week will be on the unsettled side with a return of higher
+humidity and occasional shower and storm chances.
+
+Dailies...
+
+Sunday... A pleasant and quiet weekend awaits us as high
+pressure moves overhead. The trough from Friday will still not
+have fully pulled away by Saturday, and flow will remain
+northerly or northwesterly, so this will keep temperatures a
+little below normal even with sunshine. By Sunday, winds turn
+out of the west as the trough pushes further off to the east,
+and we start to advect in warmer air. So Sunday looks several
+degrees warmer than Saturday, with highs mostly in the mid 80s
+and dew points creeping up a little but still comfortable.
+
+Monday-Tuesday... A warm frontal passage is expected Sunday night or
+early Monday as low pressure tracks into the Great Lakes. Time
+constraints prevented any detailed analysis for this period, but the
+chance for showers and thunderstorms looks to return. In addition,
+behind the warm front, higher dew points and warmer temperatures are
+expected, and some areas may see highs approach 90 by Monday.
+
+Mid-week/beyond... Low confidence. Guidance is widely spread on
+whether the early week system or an additional frontal system may
+continue to impact the region, or if high pressure and hotter
+weather will build in. No strong preference at this time.
+
+&&
+
+.AVIATION /20Z THURSDAY THROUGH TUESDAY/...
+The following discussion is for KPHL, KPNE, KTTN, KABE, KRDG, KILG,
+KMIV, KACY and surrounding areas.
+
+This afternoon-tonight...There remains a chance of showers and
+thunderstorms this afternoon which could temporarily lower ceilings
+and visibility across the area. Outside of showers and
+thunderstorms, VFR conditions will continue through this afternoon
+into this evening. Winds will remain southwest for the rest of the
+afternoon into this evening.
+
+Another round of showers is expected later this evening and
+overnight. Isolated thunderstorms are also possible. Conditions are
+expected to lower to MVFR later this evening and possibly IFR
+overnight for some areas. Winds will shift to the west through the
+overnight and become light for some areas.
+
+Friday...MVFR or IFR conditions will start the forecast for Friday
+morning. A slow improvement is expected through the morning into the
+afternoon to VFR. Winds will become gusty out of the northwest by
+later morning into the afternoon. Wind could gust 20-25 knots.
+
+Outlook...
+
+Friday night-Saturday night...VFR conditions expected.
+Northwest winds may gust 15-20 knots during the day Saturday.
+
+Sunday... VFR. High confidence. Southwesterly winds 5 to 10 kt.
+
+Sunday night-Monday... Periods of cig and vsby restrictions
+possible along with scattered showers and tstms. Southwest winds
+of 5 to 10 kt.
+
+&&
+
+.MARINE...
+Timing of the Small Craft Advisory has been adjusted as winds
+along the Delaware and New Jersey Atlantic coastal waters are
+already gusting around 25 knots. The northern New Jersey
+Atlantic coastal waters was started earlier as well as seas may
+build sooner. Delaware Bay was left as it is.
+
+All advisories will continue through the day Friday. An
+occasional wind gust may reach close to 35 knots on Friday.
+
+Outlook...
+
+Friday night-Saturday night...Conditions expected to drop below
+advisory levels by Friday night and remain below advisory
+levels through Saturday night.
+
+Sunday-Tuesday... Sub-SCA conditions expected for most of the
+weekend into early next week.
+
+Rip Currents...
+
+There is a low risk for the development of dangerous rip currents at
+the NJ and DE ocean beaches today. Winds become south with waves in
+the surf zone about 3 feet.
+
+&&
+
+.PHI WATCHES/WARNINGS/ADVISORIES...
+PA...Flash Flood Watch until 10 PM EDT this evening for PAZ054-055-
+     060>062-070-071-101>106.
+NJ...Flash Flood Watch until 10 PM EDT this evening for NJZ001-
+     007>010-012>027.
+DE...Flash Flood Watch until 10 PM EDT this evening for DEZ001.
+MD...Flash Flood Watch until 10 PM EDT this evening for MDZ008-012.
+MARINE...Small Craft Advisory until 6 PM EDT Friday for ANZ451>455.
+     Small Craft Advisory from 10 PM this evening to 6 PM EDT
+     Friday for ANZ450.
+     Small Craft Advisory from 8 PM this evening to 6 PM EDT Friday
+     for ANZ430-431.
+
+&&
+
+$$
+
+Synopsis...Robertson
+Near Term...Robertson
+Short Term...Robertson
+Long Term...O`Brien
+Aviation...Robertson/O`Brien
+Marine...Robertson/O`Brien
+
+
