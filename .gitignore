@@ -1,9 +1,9 @@
 *.csv
 *.swp
-extractions/*
+**/extractions
 *.db
 
 
 .vscode/*
-__pycache__/*
-logs/*
+**/__pycache__
+**/logs
