@@ -1,9 +1,12 @@
 import os
 import time
-from logger import create_logger
-from datetime import datetime
-from forecast import Forecast
 import requests
+from datetime import datetime
+
+from forecast import Forecast
+from processText import Pipeline
+from forecastDb import DB
+
 
 
 '''
@@ -60,14 +63,38 @@ def main(office, table):
   new_forecast = checkNewForecast(forecast)
   if not new_forecast:
     print("No new forecast for {0}".format(forecast.office))
-    return
+    return None
   else:
     print("Adding new forecast for {0}".format(forecast.office))
-    forecast.addForecast()
+    return forecast.addForecast()
+
+def processForecast(row):
+  '''
+  '''
+  pipe = Pipeline(row)
+  db = DB()
+  phrases = pipe.getPhrases()
+  table_keys = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp': 'TEXT',
+                      'Phrase': 'TEXT', 'StartIndex': 'INT', 'EndIndex': 'INT'})
+  table = "Phrase"
+  db.createTable(table, table_keys)
+  for phrase in phrases:
+    print('Adding: {0} to Table: {1}'.format(phrase['Phrase'], table))
+    db.insert('Phrase', phrase)
+  processed_dict = dict({'uID': pipe.uid, 'Office': pipe.office, 'TimeStamp': pipe.time_string})
+  db.insert('Processed', processed_dict)
+
 
 if __name__ == '__main__':
   for office in OFFICES:
-    main(office, 'AFD')
+    row = main(office, 'Forecast')
+
+  db = DB()
+  unprocessed = db.getUnprocessed()
+  for row in unprocessed:
+    print('Processing forecast from {0} at {1}'.format(row['Office'], row['TimeStamp']))
+    processForecast(row)
+
 
 
 '''

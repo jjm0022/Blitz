@@ -9,21 +9,20 @@ from forecastDb import DB
 
 class Forecast(object):
 
-  def __init__(self, office, table):
+  def __init__(self, office, table, db_path='forecasts.bd'):
     '''
     '''
     self.office = office
     self.table = table
-    self.db = DB('test_2.db')
+    self.db = DB('forecasts.db')
 
-    # Make sure the table already exists
-    if not self.tableExists(self.table):
-      self.createTable(self.table)
+    self.createTable(self.table)
 
     self.url = 'https://forecast.weather.gov/product.php?site={0}&issuedby={0}&product=AFD&format=txt&version=1&glossary=0'.format(self.office)
     self.text = None
     self.current_time_stamp = None
     self.most_recent = self.db.getMostRecent(self.office)
+
 
   def tableExists(self, table_name):
     '''
@@ -34,11 +33,22 @@ class Forecast(object):
       if table[0] == table_name:
         return True
     return False
+
   
   def createTable(self, table_name):
     '''
     '''
-    self.db.createTable(table_name)
+    if table_name == 'Forecast':
+      table_keys = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp': 'TEXT', 'Year': 'INT',
+                         'Month': 'INT', 'Day': 'INT', 'Forecast': 'TEXT'})
+      self.db.createTable(table_name, table_keys)
+    elif table_name == 'POS':
+      self.db.createPOS()
+    elif table_name == 'Entity':
+      self.db.createENT()
+    elif table_name == 'Phrase':
+      self.db.createPHRASES()
+
 
   def parse(self, request):
     '''
@@ -57,6 +67,7 @@ class Forecast(object):
       return False 
     else:
       return True
+      
   
   def getForecastTime(self, forecast_text):
     '''
@@ -84,6 +95,7 @@ class Forecast(object):
         continue
     return None
 
+
   def isNew(self):
     '''
     Checks to see if the current forecast is newer than the most recent
@@ -92,24 +104,27 @@ class Forecast(object):
       self.most_recent = self.db.getMostRecent(self.office)
     return self.current_time_stamp > parse(self.most_recent['TimeStamp'])
   
+
   def addForecast(self):
     '''
     Adds the current forecast to the DB
     '''
-    self.row_dict = self.getForecastInfo()
-    self.db.insertRow(self.row_dict)
+    self.row_dict = self.getForecastRow()
+    self.db.insert(self.table, self.row_dict)
+    return self.row_dict
 
-  def getForecastInfo(self):
+
+  def getForecastRow(self):
     '''
     Generates a dict that contains information to be inserted into the DB
     '''
-    row_dict = {'uid': str(uuid.uuid1()),
-                'office': self.office,
-                'timestamp':self.current_time_stamp.strftime('%Y%m%dT%H:%M:%S'),
-                'year': self.current_time_stamp.year,
-                'month': self.current_time_stamp.month,
-                'day': self.current_time_stamp.day,
-                'forecast': self.text}
+    row_dict = {'uID': str(uuid.uuid1()),
+                'Office': self.office,
+                'TimeStamp':self.current_time_stamp.strftime('%Y%m%dT%H:%M:%S'),
+                'Year': self.current_time_stamp.year,
+                'Month': self.current_time_stamp.month,
+                'Day': self.current_time_stamp.day,
+                'Forecast': self.text}
     return row_dict
     
 
