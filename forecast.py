@@ -6,6 +6,8 @@ from datetime import datetime
 import uuid
 from forecastDb import DB
 
+import logging
+logger = logging.getLogger(__name__)
 
 class Forecast(object):
 
@@ -62,8 +64,8 @@ class Forecast(object):
     self.current_time_stamp = self.getForecastTime(self.text)
 
     if not self.current_time_stamp:
-      print('Could not locate a timestamp for {}'.format(self.office))
-      #print(self.text) 
+      logger.info('Could not locate a timestamp for {}'.format(self.office))
+      #logger.info(self.text) 
       return False 
     else:
       return True

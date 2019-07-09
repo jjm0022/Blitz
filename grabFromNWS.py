@@ -7,24 +7,9 @@ from forecast import Forecast
 from processText import Pipeline
 from forecastDb import DB
 
+import logging
+logger = logging.getLogger(__name__)
 
-
-'''
-import airflow
-from airflow.modules import DAG
-from airflow.operators.python_operator import PythonOperator
-
-args = {
-    'owner': 'airflow',
-    'start_date': airflow.utils.dates.days_ago(1),
-}
-
-dag = DAG(
-    dag_id='update_forecasts',
-    default_args=args,
-    schedule_interval=None,
-)
-'''
 
 OFFICES = ["BOX","GSP","EPZ","FWD","BOU","BOI","PAH","FSD","LIX","OAX",
            "PIH","FGZ","RIW","RAH","TAE","OHX","MQT","LBF","FGF","IWX",
@@ -47,7 +32,7 @@ def checkNewForecast(forecast):
   '''
   r = requests.get(forecast.url)
   if r.status_code != 200:
-    print("Status Code: {0} for URL: {1}".format(r.status_code, forecast.url))
+    logger.info("Status Code: {0} for URL: {1}".format(r.status_code, forecast.url))
     return False 
   
   if forecast.parse(r):
@@ -55,18 +40,17 @@ def checkNewForecast(forecast):
   else:
     return False 
 
-def main(office, table):
+def downloadForecast(office, table):
   '''
   Main function for grabbing forcast from NWS
   '''
   forecast = Forecast(office, table)
   new_forecast = checkNewForecast(forecast)
   if not new_forecast:
-    print("No new forecast for {0}".format(forecast.office))
-    return None
+    logger.info("No new forecast for {0}".format(forecast.office))
   else:
-    print("Adding new forecast for {0}".format(forecast.office))
-    return forecast.addForecast()
+    logger.info("Adding new forecast for {0}".format(forecast.office))
+    forecast.addForecast()
 
 def processForecast(row):
   '''
@@ -79,36 +63,26 @@ def processForecast(row):
   table = "Phrase"
   db.createTable(table, table_keys)
   for phrase in phrases:
-    print('Adding: {0} to Table: {1}'.format(phrase['Phrase'], table))
+    #logger.info('Adding: {0} to Table: {1}'.format(phrase['Phrase'], table))
     db.insert('Phrase', phrase)
   processed_dict = dict({'uID': pipe.uid, 'Office': pipe.office, 'TimeStamp': pipe.time_string})
   db.insert('Processed', processed_dict)
 
 
-if __name__ == '__main__':
-  for office in OFFICES:
-    row = main(office, 'Forecast')
-
+def process():
+  '''
+  '''
   db = DB()
   unprocessed = db.getUnprocessed()
+  total_processed = 0
   for row in unprocessed:
-    print('Processing forecast from {0} at {1}'.format(row['Office'], row['TimeStamp']))
+    logger.info('Processing forecast from {0} at {1}'.format(row['Office'], row['TimeStamp']))
     processForecast(row)
+    total_processed += 1
+  logger.info('{0} forecasts processed.'.format(total_processed))
 
 
-
-'''
-logger = create_logger()
-now = datetime.now()
-logger.info('Starting grabFromNWS workflow')
-for office in OFFICES:
-  logger.info('Checking most recent forecast for {0}'.format(office))
-  task = PythonOperator(
-    task_id='get_{0}'.format(office),
-    provide_context=True,
-    python_callable=main,
-    op_arrgs=office,
-    dag=dag)
-'''
-  
+if __name__ == '__main__':
+  for office in OFFICES:
+    downloadForecast(office, 'Forecast')
 

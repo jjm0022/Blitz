@@ -4,7 +4,7 @@ from datetime import datetime
 
 class DB(object):
 
-  def __init__(self, db_path='forecasts.db'):
+  def __init__(self, db_path='/home/jmiller/git/AFDTools/forecasts.db'):
     '''
     '''
     self.db_path = db_path
@@ -59,42 +59,6 @@ class DB(object):
       rows = query.fetchall()
     for row in rows:
       yield row
-
-
-  def createFORE(self):
-    '''
-    '''
-    self.execute(
-      '''CREATE TABLE IF NOT EXISTS Forecast
-         (uID TEXT, Office TEXT, TimeStamp TEXT, Year INT, Month INT, Day INT,
-          Forecast TEXT)''')
-
-
-  def createPOS(self):
-    '''
-    '''
-    self.execute(
-      '''CREATE TABLE IF NOT EXISTS POS
-         (uID TEXT, Office TEXT, TimeStamp TEXT,
-          Token TEXT, POS TEXT, Lemma TEXT)''')
-
-
-  def createENT(self):
-    '''
-    '''
-    self.execute(
-      '''CREATE TABLE IF NOT EXISTS Entity
-         (uID TEXT, Office TEXT, TimeStamp TEXT,
-          Token TEXT, Label TEXT, Lemma TEXT)''')
-
-
-  def createPHRASES(self):
-    '''
-    '''
-    self.execute(
-      '''CREATE TABLE IF NOT EXISTS Phrase
-         (uID TEXT, Office TEXT, TimeStamp TEXT,
-          Phrase TEXT StartIndex INT EndIndex INT)''')
 
 
   def listTables(self):

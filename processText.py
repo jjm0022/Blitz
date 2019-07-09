@@ -28,7 +28,7 @@ class Pipeline(object):
     self.time_ = parse(row['TimeStamp'])
     self.office = row['Office']
     self.uid = row['uID']
-    self.pattern_path = './data/patterns.json'
+    self.pattern_path = '/home/jmiller/git/AFDTools/data/patterns.json'
     
     if preprocess:
       self._preProcess()
