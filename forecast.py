@@ -44,13 +44,6 @@ class Forecast(object):
       table_keys = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp': 'TEXT', 'Year': 'INT',
                          'Month': 'INT', 'Day': 'INT', 'Forecast': 'TEXT'})
       self.db.createTable(table_name, table_keys)
-    elif table_name == 'POS':
-      self.db.createPOS()
-    elif table_name == 'Entity':
-      self.db.createENT()
-    elif table_name == 'Phrase':
-      self.db.createPHRASES()
-
 
   def parse(self, request):
     '''
