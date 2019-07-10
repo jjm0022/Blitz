@@ -11,12 +11,12 @@ logger = logging.getLogger(__name__)
 
 class Forecast(object):
 
-  def __init__(self, office, table, db_path='forecasts.bd'):
+  def __init__(self, office, table):
     '''
     '''
     self.office = office
     self.table = table
-    self.db = DB('forecasts.db')
+    self.db = DB()
 
     self.createTable(self.table)
 
