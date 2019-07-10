@@ -3,7 +3,6 @@ import spacy
 import json
 import types
 from spacy.matcher import PhraseMatcher
-from forecastDb import DB
 
 from dateutil.parser import parse
 import re
@@ -16,6 +15,7 @@ TODO Different tables for POS, ENTITY, PHRASES, TERM_COUNTS
 '''
 
 class Pipeline(object):
+
 
   def __init__(self, row, preprocess=True):
     '''
@@ -149,6 +149,7 @@ class Pipeline(object):
 
   def patternGenerator(self, pattern_path):
     '''
+    Returns the starting and ending character index for a phrase match along with the phrase
     '''
     phrases = self.readPatterns(self._nlp.tokenizer, pattern_path)
     matcher = PhraseMatcher(self._nlp.tokenizer.vocab, max_length=6)
@@ -158,7 +159,9 @@ class Pipeline(object):
       _ = doc.vocab[w.text]
     matches = matcher(doc)
     for ent_id, start, end in matches:
-      yield (doc[start:end].text, start, end)
+      yield (doc[start:end].text,
+             doc[start:end].start_char,
+             doc[start:end].end_char)
 
     
   def readPatterns(self, tokenizer, loc, n=-1):
