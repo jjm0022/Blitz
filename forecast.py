@@ -11,14 +11,13 @@ logger = logging.getLogger(__name__)
 
 class Forecast(object):
 
-  def __init__(self, office, table):
+  def __init__(self, office, table_name='Forecast'): 
     '''
     '''
     self.office = office
-    self.table = table
+    self.table_name = table_name
     self.db = DB()
-
-    self.createTable(self.table)
+    self.createForecastTable()
 
     self.url = 'https://forecast.weather.gov/product.php?site={0}&issuedby={0}&product=AFD&format=txt&version=1&glossary=0'.format(self.office)
     self.text = None
@@ -37,13 +36,13 @@ class Forecast(object):
     return False
 
   
-  def createTable(self, table_name):
+  def createForecastTable(self):
     '''
     '''
-    if table_name == 'Forecast':
-      table_keys = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp': 'TEXT', 'Year': 'INT',
-                         'Month': 'INT', 'Day': 'INT', 'Forecast': 'TEXT'})
-      self.db.createTable(table_name, table_keys)
+    table_keys = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp': 'TEXT', 'Year': 'INT',
+                        'Month': 'INT', 'Day': 'INT', 'Forecast': 'TEXT'})
+    self.db.createTable(self.table_name, table_keys)
+
 
   def parse(self, request):
     '''
@@ -105,7 +104,7 @@ class Forecast(object):
     Adds the current forecast to the DB
     '''
     self.row_dict = self.getForecastRow()
-    self.db.insert(self.table, self.row_dict)
+    self.db.insert(self.table_name, self.row_dict)
     return self.row_dict
 
 

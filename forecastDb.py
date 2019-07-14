@@ -46,15 +46,48 @@ class DB(object):
     values = tuple(row_dict.values())
     self.execute(cmd, values) 
 
+  def getProcessedPhrases(self, uID):
+    '''
+    Returns rows matching the uID from the Phrase table
+    '''
+    with self.connection as c:
+      cur = c.cursor()
+      query = cur.execute('''SELECT * FROM Phrase WHERE uID=?''', (uID,))
+      rows = query.fetchall()
+    for row in rows:
+      yield row
+    
+
+  def updateDataset(self, uID):
+    '''
+    '''
+    with self.connection as c:
+      cur = c.cursor()
+      query = cur.execute('''UPDATE Processed
+                              SET Dataset=1
+                              WHERE uID=?''', (uID,))
+
 
   def getUnprocessed(self):
     '''
     '''
-
     with self.connection as c:
       cur = c.cursor()
       query = cur.execute('''SELECT * FROM Forecast f WHERE NOT
                              EXISTS (SELECT 1 FROM Processed WHERE uID = f.uID)
+                             ORDER BY Office, TimeStamp;''')
+      rows = query.fetchall()
+    for row in rows:
+      yield row
+
+
+  def getNotInDataset(self):
+    '''
+    '''
+    with self.connection as c:
+      cur = c.cursor()
+      query = cur.execute('''SELECT * FROM Forecast f WHERE uID 
+                             IN(SELECT uID FROM Processed WHERE Dataset = 0)
                              ORDER BY Office, TimeStamp;''')
       rows = query.fetchall()
     for row in rows:

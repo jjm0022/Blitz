@@ -29,7 +29,10 @@ def getForecast():
   '''
   import grabFromNWS
   for office in grabFromNWS.OFFICES:
-    grabFromNWS.downloadForecast(office, 'Forecast')
+    try:
+      grabFromNWS.downloadForecast(office, 'Forecast')
+    except:
+      pass
 
 grabForecast = PythonOperator(
   task_id='grab_forecast',
