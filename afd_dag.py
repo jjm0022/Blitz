@@ -11,7 +11,7 @@ args = dict({
   'owner': 'airflow',
   'start_date': airflow.utils.dates.days_ago(1),
   'email': ['jj.miller.jm@gmail.com'],
-  'email_on_failure': True,
+  'email_on_failure': False,
   'retries': 1,
   'retry_delay': timedelta(minutes=10)
 })
