@@ -165,7 +165,7 @@ class Pipeline(object):
 
     
   def readPatterns(self, tokenizer, loc, n=-1):
-    for i, line in enumerate(open(loc)):
+    for line in open(loc):
       data = json.loads(line.strip())
       phrase = tokenizer(data["text"].lower())
       for w in phrase:
