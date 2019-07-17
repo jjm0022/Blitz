@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import sqlite3 as lite
-from dateutil.parser import parse
+from dateutil.parser import parse as dateparse
 from datetime import datetime
 import uuid
 from forecastDb import DB
@@ -9,40 +9,7 @@ from forecastDb import DB
 import logging
 logger = logging.getLogger(__name__)
 
-class Forecast(object):
-
-  def __init__(self, office, table_name='Forecast'): 
-    '''
-    '''
-    self.office = office
-    self.table_name = table_name
-    self.db = DB()
-    self.createForecastTable()
-
-    self.url = 'https://forecast.weather.gov/product.php?site={0}&issuedby={0}&product=AFD&format=txt&version=1&glossary=0'.format(self.office)
-    self.text = None
-    self.current_time_stamp = None
-    self.most_recent = self.db.getMostRecent(self.office)
-
-
-  def tableExists(self, table_name):
-    '''
-    Checks if a table by the name of <table_name> already exists in the DB
-    '''
-    tables = self.db.listTables()
-    for table in tables:
-      if table[0] == table_name:
-        return True
-    return False
-
-  
-  def createForecastTable(self):
-    '''
-    '''
-    table_keys = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp': 'TEXT', 'Year': 'INT',
-                        'Month': 'INT', 'Day': 'INT', 'Forecast': 'TEXT'})
-    self.db.createTable(self.table_name, table_keys)
-
+class Parser:
 
   def parse(self, request):
     '''
@@ -61,8 +28,7 @@ class Forecast(object):
       return False 
     else:
       return True
-      
-  
+
   def getForecastTime(self, forecast_text):
     '''
     Searches the forecast text for the forecast issue time
@@ -90,13 +56,48 @@ class Forecast(object):
     return None
 
 
+class Connection(object):
+  
+
+  def __init__(self):
+    self.db = DB()
+
+class Office(Object):
+  '''
+  '''
+  def __init__(self, office):
+    self.office = office
+    self.url = f'https://forecast.weather.gov/product.php?site={self.office}&issuedby={self.office}&product=AFD&format=txt&version=1&glossary=0'
+
+
+class Forecast(Office,Connection):
+
+  def __init__(self, office, table_name='Forecast'): 
+    '''
+    '''
+    Office.__init__(self, office)
+    Connection.__init__(self)
+    self.db = DB()
+    self.createForecastTable()
+
+    self.text = None
+    self.current_time_stamp = None
+    self.most_recent = self.db.getMostRecent(self.office)
+  
+  def createForecastTable(self):
+    '''
+    '''
+    table_keys = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp': 'TEXT', 'Year': 'INT',
+                        'Month': 'INT', 'Day': 'INT', 'Forecast': 'TEXT'})
+    self.db.createTable(self.table_name, table_keys)
+
   def isNew(self):
     '''
     Checks to see if the current forecast is newer than the most recent
     '''
     if not self.most_recent:
       self.most_recent = self.db.getMostRecent(self.office)
-    return self.current_time_stamp > parse(self.most_recent['TimeStamp'])
+    return self.current_time_stamp > dateparse(self.most_recent['TimeStamp'])
   
 
   def addForecast(self):
