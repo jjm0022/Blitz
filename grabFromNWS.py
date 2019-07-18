@@ -1,49 +1,15 @@
 import os
 import time
-import requests
 from datetime import datetime
 import json
 
 from forecast import Forecast
 from processText import Pipeline
-from forecastDb import DB
+from database import DB
 
 import logging
 logger = logging.getLogger(__name__)
 
-
-OFFICES = ["BOX","GSP","EPZ","FWD","BOU","BOI","PAH","FSD","LIX","OAX",
-           "PIH","FGZ","RIW","RAH","TAE","OHX","MQT","LBF","FGF","IWX",
-           "MRX","JAX","GLD","APX","BGM","JAN","CHS","PHI","PQR","MAF",
-           "GYX","FFC","LKN","CRP","GJT","GUM","TSA","DTX","DMX","AMA",
-           "HUN","MFL","MFR","BMX","BUF","LSX","AFG","GRR","SHV","DLH",
-           "AFC","EWX","GRB","MHX","DDC","PBZ","RNK","BTV","ABQ","OKX",
-           "TBW","LZK","PSR","MOB","MPX","DVN","CTP","ILN","AKQ","ILM",
-           "REV","EKA","LUB","HFO","HNX","ILX","SEW","GGW","OUN","JKL",
-           "ICT","UNR","CLE","PDT","SJT","SJU","VEF","MEG","PUB","BRO",
-           "LMK","RLX","KEY","ALY","TWC","LWX","CAR","TOP","MSO","LCH",
-           "LOT","BYZ","LOX","CAE","MKX","CYS","SGX","EAX","BIS","SGF",
-           "MLB","HGX","MTR","STO","IND","ABR","AJK","SLC","ARX","OTX",
-           "GID","TFX"]
-
-
-def checkNewForecast(forecast):
-  '''
-  This function will check NWS link for new/updated forecast
-  '''
-  response = requests.get(forecast.url)
-  if not response:
-    logger.info(f"{response.status_code} error; Reason: {response.reason}")
-    logger.info(f"{response.status_code} error; URL: {forecast.url}")
-    return False 
-  else: 
-    if response.status_code != 200:
-      logger.info(f"{response.status_code} error; Reason: {response.reason}")
-      return False
-    elif forecast.parse(response):
-      return forecast.isNew()
-    else:
-      return False 
 
 def downloadForecast(office, table):
   '''

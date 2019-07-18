@@ -4,7 +4,7 @@ from datetime import datetime
 
 class DB(object):
 
-  def __init__(self, db_path='/home/jmiller/git/AFDTools/forecasts.db'):
+  def __init__(self, db_path='/Users/jmiller/Dropbox/git/projects/AFDTools/forecasts.db'):
     '''
     '''
     self.db_path = db_path
@@ -92,28 +92,3 @@ class DB(object):
       rows = query.fetchall()
     for row in rows:
       yield row
-
-
-  def listTables(self):
-    '''
-    '''
-    with self.connection:
-      cursor = self.connection.cursor()
-      cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-      return cursor.fetchall()
-
-
-  def getMostRecent(self, office):
-    '''
-    Returns the row-dict for the most recent forcast
-    '''
-    self.connection.row_factory = lite.Row
-    with self.connection as con:
-      cursor = con.cursor()
-      cursor = cursor.execute("SELECT * FROM Forecast WHERE Office=? ORDER BY TimeStamp DESC LIMIT 1", (office,))
-      row = cursor.fetchall()
-    try:
-      return row[0]
-    except:
-      return {'TimeStamp': datetime(1900,1,1).strftime('%Y%m%dT%H:%M:%S')}
-

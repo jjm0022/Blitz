@@ -27,10 +27,13 @@ dag = DAG(
 def getForecast():
   '''
   '''
-  import grabFromNWS
-  for office in grabFromNWS.OFFICES:
+  import forecast
+  from forecast import Forecast
+  for office in forecast.OFFICES:
     try:
-      grabFromNWS.downloadForecast(office, 'Forecast')
+      f = Forecast(office)
+      f.download()
+      f.add()
     except:
       pass
 
