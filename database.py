@@ -1,13 +1,18 @@
 import sqlite3 as lite
 import re
 from datetime import datetime
+import os
 
 class DB(object):
 
-  def __init__(self, db_path='/Users/jmiller/Dropbox/git/projects/AFDTools/forecasts.db'):
+  def __init__(self, db_path='forecasts.db'):
     '''
     '''
-    self.db_path = db_path
+    _home = os.environ["HOME"]
+    if _home.split('/')[1] == 'Users':
+      self.db_path = os.path.join(_home, 'Dropbox/git/projects/AFDTools', db_path)
+    else:
+      self.db_path = os.path.join(_home, 'git/AFDTools', db_path)
     self.connection = lite.connect(self.db_path)
     self.connection.row_factory = lite.Row
     self.processed_dict = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp':'Text'})
