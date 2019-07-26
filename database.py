@@ -19,12 +19,12 @@ class DB(object):
     '''
     if not values:
       with self.connection:
-          cur = self.connection.cursor()
-          cur.execute(command)
+        cur = self.connection.cursor()
+        cur.execute(command)
     else:
       with self.connection:
-          cur = self.connection.cursor()
-          cur.execute(command, values)
+        cur = self.connection.cursor()
+        cur.execute(command, values)
 
   def createTable(self, table_name, columns):
     '''
@@ -34,7 +34,6 @@ class DB(object):
       cmd = cmd + '{0} {1}, '.format(key, value)
     cmd = re.sub(r'\, $', ')', cmd)
     self.execute(cmd)
-
   
   def insert(self, table, row_dict):
     '''
@@ -56,17 +55,6 @@ class DB(object):
       rows = query.fetchall()
     for row in rows:
       yield row
-    
-
-  def updateDataset(self, uID):
-    '''
-    '''
-    with self.connection as c:
-      cur = c.cursor()
-      query = cur.execute('''UPDATE Processed
-                              SET Dataset=1
-                              WHERE uID=?''', (uID,))
-
 
   def getUnprocessed(self):
     '''
@@ -81,14 +69,3 @@ class DB(object):
       yield row
 
 
-  def getNotInDataset(self):
-    '''
-    '''
-    with self.connection as c:
-      cur = c.cursor()
-      query = cur.execute('''SELECT * FROM Forecast f WHERE uID 
-                             IN(SELECT uID FROM Processed WHERE Dataset = 0)
-                             ORDER BY Office, TimeStamp;''')
-      rows = query.fetchall()
-    for row in rows:
-      yield row
