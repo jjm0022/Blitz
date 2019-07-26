@@ -59,4 +59,19 @@ getPhrases = PythonOperator(
 
 ###############################################################
 
-grabForecast >> getPhrases 
+def phrases2Dataset():
+  '''
+  '''
+  from dataset import Dataset
+  d = Dataset()
+  d.add2Dataset(total=1000)
+  
+add2Dataset = PythonOperator(
+  task_id='add_to_dataset',
+  python_callable=phrases2Dataset,
+  dag=dag
+)
+
+###############################################################
+
+grabForecast >> getPhrases >> add2Dataset
