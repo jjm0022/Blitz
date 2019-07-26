@@ -27,10 +27,13 @@ dag = DAG(
 def getForecast():
   '''
   '''
-  import grabFromNWS
-  for office in grabFromNWS.OFFICES:
+  import forecast
+  from forecast import Forecast
+  for office in forecast.OFFICES:
     try:
-      grabFromNWS.downloadForecast(office, 'Forecast')
+      f = Forecast(office)
+      f.download()
+      f.add()
     except:
       pass
 
@@ -56,4 +59,19 @@ getPhrases = PythonOperator(
 
 ###############################################################
 
-grabForecast >> getPhrases 
+def phrases2Dataset():
+  '''
+  '''
+  from dataset import Dataset
+  d = Dataset()
+  d.add2Dataset(total=1000)
+  
+add2Dataset = PythonOperator(
+  task_id='add_to_dataset',
+  python_callable=phrases2Dataset,
+  dag=dag
+)
+
+###############################################################
+
+grabForecast >> getPhrases >> add2Dataset

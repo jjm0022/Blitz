@@ -13,7 +13,6 @@ class DB(object):
       self.db_path = os.path.join(_home, 'Dropbox/git/projects/AFDTools', db_path)
     else:
       self.db_path = os.path.join(_home, 'git/AFDTools', db_path)
-
     self.connection = lite.connect(self.db_path)
     self.connection.row_factory = lite.Row
     self.processed_dict = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp':'Text'})
@@ -25,12 +24,12 @@ class DB(object):
     '''
     if not values:
       with self.connection:
-          cur = self.connection.cursor()
-          cur.execute(command)
+        cur = self.connection.cursor()
+        cur.execute(command)
     else:
       with self.connection:
-          cur = self.connection.cursor()
-          cur.execute(command, values)
+        cur = self.connection.cursor()
+        cur.execute(command, values)
 
   def createTable(self, table_name, columns):
     '''
@@ -40,7 +39,6 @@ class DB(object):
       cmd = cmd + '{0} {1}, '.format(key, value)
     cmd = re.sub(r'\, $', ')', cmd)
     self.execute(cmd)
-
   
   def insert(self, table, row_dict):
     '''
@@ -62,17 +60,6 @@ class DB(object):
       rows = query.fetchall()
     for row in rows:
       yield row
-    
-
-  def updateDataset(self, uID):
-    '''
-    '''
-    with self.connection as c:
-      cur = c.cursor()
-      query = cur.execute('''UPDATE Processed
-                              SET Dataset=1
-                              WHERE uID=?''', (uID,))
-
 
   def getUnprocessed(self):
     '''
@@ -86,40 +73,4 @@ class DB(object):
     for row in rows:
       yield row
 
-
-  def getNotInDataset(self):
-    '''
-    '''
-    with self.connection as c:
-      cur = c.cursor()
-      query = cur.execute('''SELECT * FROM Forecast f WHERE uID 
-                             IN(SELECT uID FROM Processed WHERE Dataset = 0)
-                             ORDER BY Office, TimeStamp;''')
-      rows = query.fetchall()
-    for row in rows:
-      yield row
-
-
-  def listTables(self):
-    '''
-    '''
-    with self.connection:
-      cursor = self.connection.cursor()
-      cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-      return cursor.fetchall()
-
-
-  def getMostRecent(self, office):
-    '''
-    Returns the row-dict for the most recent forcast
-    '''
-    self.connection.row_factory = lite.Row
-    with self.connection as con:
-      cursor = con.cursor()
-      cursor = cursor.execute("SELECT * FROM Forecast WHERE Office=? ORDER BY TimeStamp DESC LIMIT 1", (office,))
-      row = cursor.fetchall()
-    try:
-      return row[0]
-    except:
-      return {'TimeStamp': datetime(1900,1,1).strftime('%Y%m%dT%H:%M:%S')}
 
