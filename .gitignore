@@ -2,7 +2,8 @@
 *.swp
 **/extractions
 *.db
-**.jsonsl
+*.jsonsl
+*.jsonl
 
 
 .vscode/*
