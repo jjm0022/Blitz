@@ -2,13 +2,13 @@ import spacy
 
 import json
 import types
+from dotmap import DotMap
 from spacy.matcher import PhraseMatcher
 
 from dateutil.parser import parse
 import re
 
 class Pipeline(object):
-
 
   def __init__(self, row, preprocess=True):
     '''
@@ -21,13 +21,12 @@ class Pipeline(object):
     self.time_ = parse(row['TimeStamp'])
     self.office = row['Office']
     self.uid = row['uID']
-    self.pattern_path = '/home/jmiller/git/AFDTools/data/patterns.json'
+    self.pattern_path = 'data/patterns.json'
     
     if preprocess:
       self._preProcess()
 
     self.doc = self.getDoc(self.forecast)
-  
 
   def _preProcess(self):
     '''
@@ -35,12 +34,10 @@ class Pipeline(object):
     '''
     self.forecast = self.processText(self.forecast)
 
-
   def getDoc(self, text):
     '''
     '''
     return self._nlp(text)
-
 
   def processText(self, text):
     '''
@@ -70,7 +67,6 @@ class Pipeline(object):
 
     return clean_text
 
-
   def filterTrash(self, doc, numbers=False, stopwords=False):
     '''
     Returns true if token is not a word or number
@@ -88,7 +84,6 @@ class Pipeline(object):
     else:
       return True
 
-
   def getPOS(self):
     '''
     '''
@@ -101,7 +96,6 @@ class Pipeline(object):
                     'Token': token.text,
                     'POS': token.pos_,
                     'Lemma': token.lemma_})
-    
 
   def getEntities(self):
     '''
@@ -115,7 +109,6 @@ class Pipeline(object):
                   'Label': token.label_,
                   'Lemma': token.lemma_})
 
-
   def getPhrases(self, phrases=None):
     '''
     Generator that provides rows 
@@ -126,19 +119,46 @@ class Pipeline(object):
     if isinstance(phrases, types.GeneratorType):
       phrases = list(phrases)
 
-    # Remove if phrase is a sub-phrase of the next phrase
+    # Only return the longer of phrases that overlap
     while ind < len(phrases)-1:
-      if (phrases[ind][0] in phrases[ind+1][0]) and (phrases[ind][0] != phrases[ind+1][0]): 
-        pass
-      else: 
+      if self._HasOverlap(phrases[ind], phrases[ind+1]): 
+        if (phrases[ind].end - phrases[ind].start) < (phrases[ind+1].end - phrases[ind+1].start):
+          ind+=1
+          continue
+      if self._HasOverlap(phrases[ind], phrases[ind-1]):
+        if (phrases[ind].end - phrases[ind].start) < (phrases[ind-1].end - phrases[ind-1].start):
+          ind+=1
+          continue
+      yield dict({'uID': self.uid,
+                  'Office': self.office,
+                  'TimeStamp': self.time_string,
+                  'Phrase': phrases[ind].text,
+                  'StartIndex': phrases[ind].start,
+                  'EndIndex': phrases[ind].end})
+      ind += 1  
+    if self._HasOverlap(phrases[-1], phrases[-2]):
+      if (phrases[-1].end - phrases[-1].start) > (phrases[-2].end - phrases[-2].start):
         yield dict({'uID': self.uid,
                     'Office': self.office,
                     'TimeStamp': self.time_string,
-                    'Phrase': phrases[ind][0],
-                    'StartIndex': phrases[ind][1],
-                    'EndIndex': phrases[ind][2]})
-      ind += 1  
+                    'Phrase': phrases[-1].text,
+                    'StartIndex': phrases[-1].start,
+                    'EndIndex': phrases[-1].end})
+    else:
+      yield dict({'uID': self.uid,
+                  'Office': self.office,
+                  'TimeStamp': self.time_string,
+                  'Phrase': phrases[-1].text,
+                  'StartIndex': phrases[-1].start,
+                  'EndIndex': phrases[-1].end})
 
+
+  def _HasOverlap(self, a1, a2):
+    '''
+    Check if the 2 annotations overlap.
+    '''
+    return (a1.start >= a2.start and a1.start < a2.end or
+            a1.end > a2.start and a1.end <= a2.end)
 
   def patternGenerator(self, pattern_path):
     '''
@@ -152,10 +172,9 @@ class Pipeline(object):
       _ = doc.vocab[w.text]
     matches = matcher(doc)
     for ent_id, start, end in matches:
-      yield (doc[start:end].text,
-             doc[start:end].start_char,
-             doc[start:end].end_char)
-
+      yield DotMap(text=doc[start:end].text,
+                   start=doc[start:end].start_char,
+                   end=doc[start:end].end_char)
     
   def readPatterns(self, tokenizer, loc, n=-1):
     for i, line in enumerate(open(loc)):
