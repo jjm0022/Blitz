@@ -48,8 +48,11 @@ grabForecast = PythonOperator(
 def getPhrases():
   '''
   '''
-  import grabFromNWS
-  grabFromNWS.process()
+  from extract import Extract
+
+  ex = Extract()
+  ex.run()
+  
   
 getPhrases = PythonOperator(
   task_id='get_phrases',

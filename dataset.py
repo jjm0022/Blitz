@@ -36,6 +36,18 @@ class Connection(DB):
       cur = c.cursor()
       cur.execute(query,(uID,))
 
+  def getProcessedPhrases(self, uID):
+    '''
+    Returns rows matching the uID from the Phrase table
+    '''
+    connection = self.db.connection
+    with connection as c:
+      cur = c.cursor()
+      query = cur.execute('''SELECT * FROM Phrase WHERE uID=?''', (uID,))
+      rows = query.fetchall()
+    for row in rows:
+      yield row
+
 
 class Dataset(Connection):
   '''

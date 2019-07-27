@@ -49,28 +49,3 @@ class DB(object):
     cmd = re.sub(r'\, $', ')', cmd)
     values = tuple(row_dict.values())
     self.execute(cmd, values) 
-
-  def getProcessedPhrases(self, uID):
-    '''
-    Returns rows matching the uID from the Phrase table
-    '''
-    with self.connection as c:
-      cur = c.cursor()
-      query = cur.execute('''SELECT * FROM Phrase WHERE uID=?''', (uID,))
-      rows = query.fetchall()
-    for row in rows:
-      yield row
-
-  def getUnprocessed(self):
-    '''
-    '''
-    with self.connection as c:
-      cur = c.cursor()
-      query = cur.execute('''SELECT * FROM Forecast f WHERE NOT
-                             EXISTS (SELECT 1 FROM Processed WHERE uID = f.uID)
-                             ORDER BY Office, TimeStamp;''')
-      rows = query.fetchall()
-    for row in rows:
-      yield row
-
-
