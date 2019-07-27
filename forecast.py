@@ -1,11 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
-import sqlite3 as lite
 from dateutil.parser import parse as dateparse
 from datetime import datetime
 import uuid
 from database import DB
-import logging
 
 OFFICES = ["BOX","GSP","EPZ","FWD","BOU","BOI","PAH","FSD","LIX","OAX",
            "PIH","FGZ","RIW","RAH","TAE","OHX","MQT","LBF","FGF","IWX",
@@ -114,7 +112,6 @@ class Office:
   def __init__(self, office):
     self.office = office
     self.url = f'https://forecast.weather.gov/product.php?site={self.office}&issuedby={self.office}&product=AFD&format=txt&version=1&glossary=0'
-    self.logger = logging.getLogger(__name__)
 
   def download(self):
     '''

@@ -4,7 +4,7 @@ import json
 import os
 
 from database import DB
-from processText import Pipeline
+from extract import Pipeline
 
 
 class Connection(DB):

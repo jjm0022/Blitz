@@ -7,10 +7,6 @@ from forecast import Forecast
 from processText import Pipeline
 from database import DB
 
-import logging
-logger = logging.getLogger(__name__)
-
-
 
 def processForecast(row):
   '''

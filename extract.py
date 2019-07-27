@@ -7,13 +7,6 @@ from spacy.matcher import PhraseMatcher
 from dateutil.parser import parse
 import re
 
-
-'''
-TODO Different tables for POS, ENTITY, PHRASES, TERM_COUNTS
-      - Each table should have it's own function (Pipeline)
-      - Each forecast should be processed before
-'''
-
 class Pipeline(object):
 
 
