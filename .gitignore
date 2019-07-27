@@ -2,7 +2,7 @@
 *.swp
 **/extractions
 *.db
-*.jsonsl
+*.jonsl
 *.jsonl
 
 
