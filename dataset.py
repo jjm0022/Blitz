@@ -81,7 +81,6 @@ class Dataset(Connection):
         
         self.updateEntry(annotation.id)
       if len(annotations_list) == 0:
-        print(f"No annotations for {row['Office']} on {row['TimeStamp']}")
         continue
       print(f'Adding {len(annotations_list)} annotations')
       self.json_lines.append(self._toJSON(annotations_list, pipe))
