@@ -74,13 +74,12 @@ class Dataset(Connection):
         break
       self.json_lines = list()
       print(f"Processing phrases from {forecast['uID']}")
-      #print(f"Processing phrases for {forecast['Office']} on {forecast['TimeStamp']}")
       pipe = Pipeline(forecast)
       self.annotations = list()
       annotations_list = list()
 
       # for each forecast, store it, and the annotations in a single json with 
-      for row in self.db.getProcessedPhrases(forecast['uID']):
+      for row in self.getProcessedPhrases(forecast['uID']):
         annotation = self.Annotation(start=row['StartIndex'],
                                 end=row['EndIndex'],
                                 label='PlaceHolder',
@@ -93,7 +92,6 @@ class Dataset(Connection):
         
         self.updateEntry(annotation.id)
       if len(annotations_list) == 0:
-        print(f"No annotations for {row['Office']} on {row['TimeStamp']}")
         continue
       print(f'Adding {len(annotations_list)} annotations')
       self.json_lines.append(self._toJSON(annotations_list, pipe))
