@@ -63,7 +63,8 @@ class Dataset(Connection):
         if dataset_path:
             self.dataset_path = dataset_path
         else:
-            self.dataset_path = os.path.join('./data', 'nws_phrase_dataest.jsonl')
+            project_path = os.path.join(os.environ['GIT_HOME'], 'AFDTools')
+            self.dataset_path = os.path.join(project_path, 'data', 'nws_phrase_dataest.jsonl')
 
     def add2Dataset(self, total=1e35):
         '''

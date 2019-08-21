@@ -6,18 +6,14 @@ import os
 
 class DB(object):
 
-    def __init__(self, db_path='forecasts.db'):
+    def __init__(self, db_path=None):
         '''
         '''
-        _home = os.environ["HOME"]
-        if _home.split('/')[1] == 'Users':
-            self.db_path = os.path.join(_home,
-                                        'Dropbox/git/projects/AFDTools',
-                                        db_path)
+        if not db_path:
+            project_path = os.path.join(os.environ['GIT_HOME'], 'AFDTools')
+            self.db_path = os.path.join(project_path, 'forecasts.db')
         else:
-            self.db_path = os.path.join(_home,
-                                        'git/AFDTools',
-                                        db_path)
+            self.db_path = db_path
         self.connection = lite.connect(self.db_path)
         self.connection.row_factory = lite.Row
         self.processed_dict = dict({'uID': 'TEXT',

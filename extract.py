@@ -2,6 +2,7 @@ import spacy
 
 import json
 import types
+import os
 from dotmap import DotMap
 from spacy.matcher import PhraseMatcher
 
@@ -49,6 +50,10 @@ class Matcher:
         if isinstance(phrases, types.GeneratorType):
             phrases = list(phrases)
 
+        if len(phrases) <= 1:
+            print(f'Only {len(phrases)} identified. Skipping...')
+            return None
+        print(f'{len(phrases)} identified')
         # Only return the longer of phrases that overlap
         while ind < len(phrases) - 1:
             if self._HasOverlap(phrases[ind], phrases[ind + 1]):
@@ -66,6 +71,7 @@ class Matcher:
                         'StartIndex': phrases[ind].start,
                         'EndIndex': phrases[ind].end})
             ind += 1
+        
         if self._HasOverlap(phrases[-1], phrases[-2]):
             if (phrases[-1].end - phrases[-1].start) > (phrases[-2].end - phrases[-2].start):
                 yield dict({'uID': self.uid,
@@ -129,7 +135,8 @@ class Pipeline(Matcher, Connection):
         self.time_ = parse(row['TimeStamp'])
         self.office = row['Office']
         self.uid = row['uID']
-        self.pattern_path = 'data/patterns.json'
+        project_path = os.path.join(os.environ['GIT_HOME'], 'AFDTools')
+        self.pattern_path = os.path.join(project_path, 'data', 'patterns.json')
 
         if preprocess:
             self._preProcess()
@@ -140,6 +147,8 @@ class Pipeline(Matcher, Connection):
         '''
         '''
         phrases = self.getPhrases()
+        if not phrases:
+            return
         for phrase in phrases:
             self.db.insert('Phrase', phrase)
 
@@ -204,6 +213,7 @@ class Extract(Pipeline, Connection):
         Connection.__init__(self, db_path=db_path)
 
     def run(self):
+        print('Fetching unprocessed forecasts')
         unprocessed = self.getUnprocessed()
         total_processed = 0
         for row in unprocessed:
@@ -212,3 +222,7 @@ class Extract(Pipeline, Connection):
             pipe.processForecast()
             total_processed += 1
         print(f'{total_processed} forecasts processed.')
+
+if __name__ == "__main__":
+    ex = Extract()
+    ex.run()
