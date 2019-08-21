@@ -71,7 +71,7 @@ class Matcher:
                         'StartIndex': phrases[ind].start,
                         'EndIndex': phrases[ind].end})
             ind += 1
-        
+
         if self._HasOverlap(phrases[-1], phrases[-2]):
             if (phrases[-1].end - phrases[-1].start) > (phrases[-2].end - phrases[-2].start):
                 yield dict({'uID': self.uid,
