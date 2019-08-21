@@ -24,18 +24,19 @@ dag = DAG(
 
 ###############################################################
 
+
 def getForecast():
-  '''
-  '''
-  import forecast
-  from forecast import Forecast
-  for office in forecast.OFFICES:
-    try:
-      f = Forecast(office)
-      f.download()
-      f.add()
-    except:
-      pass
+    '''
+    '''
+    import forecast
+    from forecast import Forecast
+    for office in forecast.OFFICES:
+        try:
+            f = Forecast(office)
+            f.download()
+            f.add()
+        except:
+            pass
 
 grabForecast = PythonOperator(
   task_id='grab_forecast',
@@ -45,12 +46,16 @@ grabForecast = PythonOperator(
 
 ###############################################################
 
+
 def getPhrases():
-  '''
-  '''
-  import grabFromNWS
-  grabFromNWS.process()
-  
+    '''
+    '''
+    from extract import Extract
+
+    ex = Extract()
+    ex.run()
+
+
 getPhrases = PythonOperator(
   task_id='get_phrases',
   python_callable=getPhrases,
@@ -59,13 +64,14 @@ getPhrases = PythonOperator(
 
 ###############################################################
 
+
 def phrases2Dataset():
-  '''
-  '''
-  from dataset import Dataset
-  d = Dataset()
-  d.add2Dataset(total=1000)
-  
+    '''
+    '''
+    from dataset import Dataset
+    d = Dataset()
+    d.add2Dataset(total=1000)
+
 add2Dataset = PythonOperator(
   task_id='add_to_dataset',
   python_callable=phrases2Dataset,

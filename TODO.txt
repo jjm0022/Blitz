@@ -1,5 +1,0 @@
-TODO:
-  - Try training a spacy model to identify the NWS vocab words and entities.
-  - create functions that will insert rows for the different tables
-    - as of right now all the tables can be created (7/1)
-      
