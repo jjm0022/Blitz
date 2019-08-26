@@ -50,68 +50,9 @@ class Connection(DB):
 
 
 class Dataset(Connection):
-  '''
-  This class deals with generating a dataset for training a entity recognition model.
-  The phrases are being labeled with a generic label for right now. 
-  '''
-
-  def __init__(self, dataset_path=None):
-    Connection.__init__(self)    
-
-    self.Annotation = collections.namedtuple('Annotation', ['start', 'end', 'label', 'content', 'id', 'phrase'])
-
-    if dataset_path:
-      self.dataset_path = dataset_path
-    else:
-      self.dataset_path = os.path.join('./data', 'nws_phrase_dataest.jsonl')
-
-  def add2Dataset(self, total=1e35):
-    '''
-    '''
-    # Grab the rows that have not been added to the dataset
-    for iteration, forecast in enumerate(self.notInDataset()):
-      if iteration >= total:
-        break
-      self.json_lines = list()
-      print(f"Processing phrases from {forecast['uID']}")
-      #print(f"Processing phrases for {forecast['Office']} on {forecast['TimeStamp']}")
-      pipe = Pipeline(forecast)
-      self.annotations = list()
-      annotations_list = list()
-
-      # for each forecast, store it, and the annotations in a single json with 
-      for row in self.db.getProcessedPhrases(forecast['uID']):
-        annotation = self.Annotation(start=row['StartIndex'],
-                                end=row['EndIndex'],
-                                label='PlaceHolder',
-                                content=forecast['Forecast'],
-                                phrase=row['Phrase'],
-                                id=row['uID'])
-          
-        if self._AddAnnotation(annotation):
-          annotations_list.append(self._AnnotationToJson(annotation))
-        
-        self.updateEntry(annotation.id)
-      if len(annotations_list) == 0:
-        continue
-      print(f'Adding {len(annotations_list)} annotations')
-      self.json_lines.append(self._toJSON(annotations_list, pipe))
-
-      with open('nws_phrase_dataset.jonsl', 'a+') as t:
-        t.writelines(self.json_lines)
-
-  def _AddAnnotation(self, annotation):
-    for a in self.annotations:
-      if self._HasOverlap(annotation, a):
-        print(f'Overlap with {a.phrase} and {annotation.phrase}')
-        return False
-    self.annotations.append(annotation)
-    return True
-
-  def _HasOverlap(self, a1, a2):
     '''
     This class deals with generating a dataset for training a entity recognition model.
-    The phrases are being labeled with a generic label for right now.
+    The phrases are being labeled with a generic label for right now. 
     '''
 
     def __init__(self, dataset_path=None):
@@ -141,11 +82,11 @@ class Dataset(Connection):
             # for each forecast, store it, and the annotations in a single json with
             for row in self.getProcessedPhrases(forecast['uID']):
                 annotation = self.Annotation(start=row['StartIndex'],
-                                             end=row['EndIndex'],
-                                             label='PlaceHolder',
-                                             content=forecast['Forecast'],
-                                             phrase=row['Phrase'],
-                                             id=row['uID'])
+                                                end=row['EndIndex'],
+                                                label='PlaceHolder',
+                                                content=forecast['Forecast'],
+                                                phrase=row['Phrase'],
+                                                id=row['uID'])
 
                 if self._AddAnnotation(annotation):
                     annotations_list.append(self._AnnotationToJson(annotation))
