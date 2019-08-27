@@ -82,11 +82,11 @@ class Dataset(Connection):
             # for each forecast, store it, and the annotations in a single json with
             for row in self.getProcessedPhrases(forecast['uID']):
                 annotation = self.Annotation(start=row['StartIndex'],
-                                                end=row['EndIndex'],
-                                                label='PlaceHolder',
-                                                content=forecast['Forecast'],
-                                                phrase=row['Phrase'],
-                                                id=row['uID'])
+                                             end=row['EndIndex'],
+                                             label='PlaceHolder',
+                                             content=forecast['Forecast'],
+                                             phrase=row['Phrase'],
+                                             id=row['uID'])
 
                 if self._AddAnnotation(annotation):
                     annotations_list.append(self._AnnotationToJson(annotation))
