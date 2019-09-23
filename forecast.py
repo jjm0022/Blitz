@@ -4,6 +4,7 @@ from dateutil.parser import parse as dateparse
 from datetime import datetime
 import uuid
 from database import DB
+from database_definitions import Office, Forecast
 
 OFFICES = ["BOX","GSP","EPZ","FWD","BOU","BOI","PAH","FSD","LIX","OAX",
            "PIH","FGZ","RIW","RAH","TAE","OHX","MQT","LBF","FGF","IWX",
@@ -65,7 +66,7 @@ class Parser:
         return None
 
 
-class Connection(DB):
+class Connection:
 
     def __init__(self, db_path):
         if db_path:
@@ -74,26 +75,16 @@ class Connection(DB):
             self.db = DB()
         self.tables = [row['name'] for row in self.listTables()]
 
-    def createForecastTable(self):
-        '''
-        '''
-        table_keys = dict({'uID': 'TEXT', 'Office': 'TEXT', 'TimeStamp': 'TEXT', 'Year': 'INT',
-                            'Month': 'INT', 'Day': 'INT', 'Forecast': 'TEXT'})
-        self.db.createTable('Forecast', table_keys)
-
-    def getMostRecent(self):
+    def getMostRecent(self, office):
         '''
         Returns the row-dict for the most recent forcast
         '''
-        connection = self.db.connection
-        with connection as con:
-            cursor = con.cursor()
-            cursor = cursor.execute("SELECT * FROM Forecast WHERE Office=? ORDER BY TimeStamp DESC LIMIT 1", (self.office,))
-            row = cursor.fetchall()
-        try:
-            return row[0]
-        except:
-            return {'TimeStamp': datetime(1900,1,1).strftime('%Y%m%dT%H:%M:%S')}
+        forecasts = self.session.query(Forecast).\
+                                 filter(Office.id == Forecast.office_id).\
+                                 filter(Office.name == office).\
+                                 order_by(Forecast.time_stamp).all()
+        return forecasts[-1]
+
 
     def listTables(self):
         '''
