@@ -28,13 +28,12 @@ dag = DAG(
 def getForecast():
     '''
     '''
-    import forecast
-    from forecast import Forecast
-    for office in forecast.OFFICES:
+    from forecast import Downloader, OFFICES
+    for office in OFFICES:
         try:
-            f = Forecast(office)
-            f.download()
-            f.add()
+            d = Downloader(office)
+            forecast = d.download()
+            d.insert(forecast)
         except:
             pass
 
