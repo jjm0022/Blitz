@@ -2,9 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 from dateutil.parser import parse as dateparse
 from datetime import datetime
-import uuid
+
 from database import DB
-from database_definitions import Office, Forecast
+from database_definitions import Office, Forecast, Status
 
 OFFICES = ["BOX","GSP","EPZ","FWD","BOU","BOI","PAH","FSD","LIX","OAX",
            "PIH","FGZ","RIW","RAH","TAE","OHX","MQT","LBF","FGF","IWX",
@@ -20,8 +20,75 @@ OFFICES = ["BOX","GSP","EPZ","FWD","BOU","BOI","PAH","FSD","LIX","OAX",
            "MLB","HGX","MTR","STO","IND","ABR","AJK","SLC","ARX","OTX",
            "GID","TFX"]
 
-class Parser:
 
+class Connection:
+
+    def __init__(self):
+        self.db = DB()
+        self.session = self.db.session
+
+    def getMostRecent(self):
+        '''
+        Returns the row-dict for the most recent forcast
+        '''
+        forecasts = self.session.query(Forecast).\
+                                 filter(Office.id == Forecast.office_id).\
+                                 filter(Office.name == self.office.name).\
+                                 order_by(Forecast.time_stamp).all()
+        return forecasts[-1]
+    
+    def insert(self, forecast):
+        self.session.add(
+            forecast
+        )
+        self.session.commit()
+
+
+class Downloader(Connection):
+
+    def __init__(self, office):
+        '''
+        '''
+        Connection.__init__(self)
+        self.office = self.session.query(Office).filter_by(name=office).one()
+        self.url = f'https://forecast.weather.gov/product.php?site={self.office.name}&issuedby={self.office.name}&product=AFD&format=txt&version=1&glossary=0'
+        self.text = None
+        self.current_time_stamp = None
+        self.previous = self.getMostRecent()
+    
+    def download(self):
+        '''
+        This function will check NWS link for new/updated forecast
+        '''
+        response = requests.get(self.url)
+        if not response:
+            print(f"{response.status_code} error; Reason: {response.reason}")
+            print(f"{response.status_code} error; URL: {self.url}")
+            return None
+        else:
+            if response.status_code != 200:
+                print(f"{response.status_code} error; Reason: {response.reason}")
+                return None
+            elif self.parse(response):
+                print(f"Downloaded forecast from {self.office.name} valid for {self.current_time_stamp.strftime('%c')}")
+                return Forecast(
+                    id=self.office.name + '-' + self.current_time_stamp.strftime('%Y-%m-%d %H:%M:%S'),
+                    office=self.office,
+                    status=Status(unique=0, clean=0, extracted=0, in_dataset=0),
+                    time_stamp=self.current_time_stamp,
+                    date_accessed=datetime.now(),
+                    raw_text=self.text
+                )
+            else:
+                return None
+
+    def isNew(self):
+        '''
+        Checks to see if the current forecast is newer than the most recent
+        '''
+        recent = self.getMostRecent()
+        return self.current_time_stamp > dateparse(self.previous.time_stamp)
+    
     def parse(self, request):
         '''
         parses the forecast text
@@ -34,7 +101,7 @@ class Parser:
         self.current_time_stamp = self.getForecastTime(self.text)
 
         if not self.current_time_stamp:
-            print('Could not locate a timestamp for {}'.format(self.office))
+            print('Could not identify a timestamp for {}'.format(self.office.name))
             return False
         else:
             return True
@@ -64,103 +131,3 @@ class Parser:
             except ValueError:
                 continue
         return None
-
-
-class Connection:
-
-    def __init__(self, db_path):
-        if db_path:
-            self.db = DB(db_path=db_path)
-        else:
-            self.db = DB()
-        self.tables = [row['name'] for row in self.listTables()]
-
-    def getMostRecent(self, office):
-        '''
-        Returns the row-dict for the most recent forcast
-        '''
-        forecasts = self.session.query(Forecast).\
-                                 filter(Office.id == Forecast.office_id).\
-                                 filter(Office.name == office).\
-                                 order_by(Forecast.time_stamp).all()
-        return forecasts[-1]
-
-
-    def listTables(self):
-        '''
-        '''
-        connection = self.db.connection
-        with connection as con:
-            cursor = con.cursor()
-            cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-            return cursor.fetchall()
-
-
-
-class Office:
-    '''
-    '''
-    def __init__(self, office):
-        self.office = office
-        self.url = f'https://forecast.weather.gov/product.php?site={self.office}&issuedby={self.office}&product=AFD&format=txt&version=1&glossary=0'
-
-    def download(self):
-        '''
-        This function will check NWS link for new/updated forecast
-        '''
-        response = requests.get(self.url)
-        if not response:
-            print(f"{response.status_code} error; Reason: {response.reason}")
-            print(f"{response.status_code} error; URL: {self.url}")
-            return None
-        else:
-            if response.status_code != 200:
-                print(f"{response.status_code} error; Reason: {response.reason}")
-                return None
-            elif self.parse(response):
-                print(f"Downloaded forcast from {self.office} valid for {self.current_time_stamp.strftime('%c')}")
-                return
-            else:
-                return None
-
-
-class Forecast(Office,Connection,Parser):
-
-    def __init__(self, office, db_path=None):
-        '''
-        '''
-        Office.__init__(self, office)
-        Connection.__init__(self, db_path)
-        self.createForecastTable()
-
-        self.text = None
-        self.current_time_stamp = None
-        self.previous = self.getMostRecent()
-
-    def isNew(self):
-        '''
-        Checks to see if the current forecast is newer than the most recent
-        '''
-        if not self.previous:
-            self.previous = self.getMostRecent()
-        return self.current_time_stamp > dateparse(self.previous['TimeStamp'])
-
-    def add(self, table_name='Forecast'):
-        '''
-        Adds the current forecast to the DB
-        '''
-        self.row_dict = self.getRowInfo()
-        self.db.insert(table_name, self.row_dict)
-
-    def getRowInfo(self):
-        '''
-        Generates a dict that contains information to be inserted into the DB
-        '''
-        row_dict = {'uID': str(uuid.uuid1()),
-                    'Office': self.office,
-                    'TimeStamp':self.current_time_stamp.strftime('%Y%m%dT%H:%M:%S'),
-                    'Year': self.current_time_stamp.year,
-                    'Month': self.current_time_stamp.month,
-                    'Day': self.current_time_stamp.day,
-                    'Forecast': self.text}
-        return row_dict
