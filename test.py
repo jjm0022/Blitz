@@ -14,40 +14,153 @@ from loguru import logger
 import sys
 
 Base = declarative_base()
-#DBURL = 'mysql+mysqldb://jmiller:b14z3r5@10.0.0.100:3306/plexserverdb'
-DBURL = 'mysql+mysqldb://root:b14z3r5@10.0.0.100:3306/testdb'
+# DBURL = 'mysql+mysqldb://jmiller:b14z3r5@10.0.0.100:3306/plexserverdb'
+DBURL = "mysql+mysqldb://root:b14z3r5@10.0.0.100:3306/testdb"
 
-OFFICES = ["BOX","GSP","EPZ","FWD","BOU","BOI","PAH","FSD","LIX","OAX",
-           "PIH","FGZ","RIW","RAH","TAE","OHX","MQT","LBF","FGF","IWX",
-           "MRX","JAX","GLD","APX","BGM","JAN","CHS","PHI","PQR","MAF",
-           "GYX","FFC","LKN","CRP","GJT","GUM","TSA","DTX","DMX","AMA",
-           "HUN","MFL","MFR","BMX","BUF","LSX","AFG","GRR","SHV","DLH",
-           "AFC","EWX","GRB","MHX","DDC","PBZ","RNK","BTV","ABQ","OKX",
-           "TBW","LZK","PSR","MOB","MPX","DVN","CTP","ILN","AKQ","ILM",
-           "REV","EKA","LUB","HFO","HNX","ILX","SEW","GGW","OUN","JKL",
-           "ICT","UNR","CLE","PDT","SJT","SJU","VEF","MEG","PUB","BRO",
-           "LMK","RLX","KEY","ALY","TWC","LWX","CAR","TOP","MSO","LCH",
-           "LOT","BYZ","LOX","CAE","MKX","CYS","SGX","EAX","BIS","SGF",
-           "MLB","HGX","MTR","STO","IND","ABR","AJK","SLC","ARX","OTX",
-           "GID","TFX"]
+OFFICES = [
+    "BOX",
+    "GSP",
+    "EPZ",
+    "FWD",
+    "BOU",
+    "BOI",
+    "PAH",
+    "FSD",
+    "LIX",
+    "OAX",
+    "PIH",
+    "FGZ",
+    "RIW",
+    "RAH",
+    "TAE",
+    "OHX",
+    "MQT",
+    "LBF",
+    "FGF",
+    "IWX",
+    "MRX",
+    "JAX",
+    "GLD",
+    "APX",
+    "BGM",
+    "JAN",
+    "CHS",
+    "PHI",
+    "PQR",
+    "MAF",
+    "GYX",
+    "FFC",
+    "LKN",
+    "CRP",
+    "GJT",
+    "GUM",
+    "TSA",
+    "DTX",
+    "DMX",
+    "AMA",
+    "HUN",
+    "MFL",
+    "MFR",
+    "BMX",
+    "BUF",
+    "LSX",
+    "AFG",
+    "GRR",
+    "SHV",
+    "DLH",
+    "AFC",
+    "EWX",
+    "GRB",
+    "MHX",
+    "DDC",
+    "PBZ",
+    "RNK",
+    "BTV",
+    "ABQ",
+    "OKX",
+    "TBW",
+    "LZK",
+    "PSR",
+    "MOB",
+    "MPX",
+    "DVN",
+    "CTP",
+    "ILN",
+    "AKQ",
+    "ILM",
+    "REV",
+    "EKA",
+    "LUB",
+    "HFO",
+    "HNX",
+    "ILX",
+    "SEW",
+    "GGW",
+    "OUN",
+    "JKL",
+    "ICT",
+    "UNR",
+    "CLE",
+    "PDT",
+    "SJT",
+    "SJU",
+    "VEF",
+    "MEG",
+    "PUB",
+    "BRO",
+    "LMK",
+    "RLX",
+    "KEY",
+    "ALY",
+    "TWC",
+    "LWX",
+    "CAR",
+    "TOP",
+    "MSO",
+    "LCH",
+    "LOT",
+    "BYZ",
+    "LOX",
+    "CAE",
+    "MKX",
+    "CYS",
+    "SGX",
+    "EAX",
+    "BIS",
+    "SGF",
+    "MLB",
+    "HGX",
+    "MTR",
+    "STO",
+    "IND",
+    "ABR",
+    "AJK",
+    "SLC",
+    "ARX",
+    "OTX",
+    "GID",
+    "TFX",
+]
+
 
 class Forecast(Base):
-    __tablename__ = 'forecast'
+    __tablename__ = "forecast"
 
-    id = Column(String(25), 
-                primary_key=True)
+    id = Column(String(25), primary_key=True)
 
-    office_id = Column(Integer, ForeignKey('office.id'))
-    office = relationship("Office", back_populates='forecasts')
-    status_id = Column(Integer, ForeignKey('status.id'))
-    status = relationship("Status",
-                          back_populates='forecast',
-                          single_parent=True,
-                          cascade='all, delete, delete-orphan')
-    #extraction_id = Column(Integer, ForeignKey('extraction.id'))
-    extractions = relationship("Extraction",
-                               back_populates='forecast',
-                               cascade='all, delete, delete-orphan')
+    office_id = Column(Integer, ForeignKey("office.id"))
+    office = relationship("Office", back_populates="forecasts")
+    status_id = Column(Integer, ForeignKey("status.id"))
+    status = relationship(
+        "Status",
+        back_populates="forecast",
+        single_parent=True,
+        cascade="all, delete, delete-orphan",
+    )
+    # extraction_id = Column(Integer, ForeignKey('extraction.id'))
+    extractions = relationship(
+        "Extraction", back_populates="forecast", cascade="all, delete, delete-orphan"
+    )
 
     time_stamp = Column(DateTime)
     date_accessed = Column(DateTime, default=func.now())
@@ -56,13 +169,13 @@ class Forecast(Base):
 
 
 class Office(Base):
-    __tablename__ = 'office'
+    __tablename__ = "office"
 
     id = Column(Integer, primary_key=True)
 
-    forecasts = relationship("Forecast",
-                              back_populates='office',
-                              cascade='all, delete, delete-orphan')
+    forecasts = relationship(
+        "Forecast", back_populates="office", cascade="all, delete, delete-orphan"
+    )
 
     name = Column(String(4))
     city = Column(String(255))
@@ -71,13 +184,11 @@ class Office(Base):
 
 
 class Status(Base):
-    __tablename__ = 'status'
+    __tablename__ = "status"
 
     id = Column(Integer, primary_key=True)
 
-    forecast = relationship("Forecast",
-                            uselist=False,
-                            back_populates='status')
+    forecast = relationship("Forecast", uselist=False, back_populates="status")
 
     unique = Column(Boolean, default=False)
     clean = Column(Boolean, default=False)
@@ -86,14 +197,12 @@ class Status(Base):
 
 
 class Extraction(Base):
-    __tablename__ = 'extraction'
+    __tablename__ = "extraction"
 
     id = Column(Integer, primary_key=True)
 
-    forecast_id = Column(String(25), ForeignKey('forecast.id'))
-    forecast = relationship("Forecast", 
-                            uselist=False,
-                            back_populates='extractions')
+    forecast_id = Column(String(25), ForeignKey("forecast.id"))
+    forecast = relationship("Forecast", uselist=False, back_populates="extractions")
 
     phrase = Column(String(50))
     start_index = Column(Integer)
@@ -107,16 +216,16 @@ def setup_database(echo=True):
 
 def test_flush_no_pk():
     """Individual INSERT statements via the ORM, calling upon last row id"""
-    with open('data/nws_office_info.json', 'r') as j:
+    with open("data/nws_office_info.json", "r") as j:
         office_info = json.load(j)
     session = Session(bind=engine)
     session.add_all(
         [
             Office(
                 name=office,
-                city=office_info[office]['City'],
-                state=office_info[office]['State'],
-                address=office_info[office]['Address']
+                city=office_info[office]["City"],
+                state=office_info[office]["State"],
+                address=office_info[office]["Address"],
             )
             for office in office_info
         ]
@@ -127,10 +236,10 @@ def test_flush_no_pk():
 
 def populateForecastByOffice(office):
     """Individual INSERT statements via the ORM, calling upon last row id"""
-    db = DB(db_path='/home/jmiller/git/AFDTools/forecasts.db')
+    db = DB(db_path="/home/jmiller/git/AFDTools/forecasts.db")
 
     logger.info(f"Inserting forecasts for {office}")
-    
+
     with db.connection as con:
         cur = con.cursor()
         cur.execute(f"SELECT * FROM Forecast WHERE Office == '{office}';")
@@ -142,19 +251,19 @@ def populateForecastByOffice(office):
     total = 0
     skipped = 0
     for row in rows:
-        id = str(Of.name) + '-' + parse(row['TimeStamp']).strftime('%Y-%m-%d %H:%M:%S')
+        id = str(Of.name) + "-" + parse(row["TimeStamp"]).strftime("%Y-%m-%d %H:%M:%S")
         if id in ids:
             logger.debug(f"Duplicate time_stamp: {id}")
             skipped += 1
             continue
         f = Forecast(
-                id=id, 
-                office=Of,
-                status=Status(unique=0, clean=0, extracted=0, in_dataset=0),
-                time_stamp=parse(row['TimeStamp']).strftime('%Y-%m-%d %H:%M:%S'),
-                date_accessed=datetime.now(),
-                raw_text=row['Forecast']
-            )
+            id=id,
+            office=Of,
+            status=Status(unique=0, clean=0, extracted=0, in_dataset=0),
+            time_stamp=parse(row["TimeStamp"]).strftime("%Y-%m-%d %H:%M:%S"),
+            date_accessed=datetime.now(),
+            raw_text=row["Forecast"],
+        )
         session.merge(f)
         ids.append(id)
         total += 1
@@ -166,36 +275,39 @@ def populateForecastByOffice(office):
 
 
 def checkID(row):
-    with open('existing_ids.json', 'r') as j:
+    with open("existing_ids.json", "r") as j:
         d = json.load(j)
-    time_stamps = d.get(row['Office'], None)
+    time_stamps = d.get(row["Office"], None)
     if isinstance(time_stamps, list):
-        if row['TimeStamp'] not in time_stamps:
+        if row["TimeStamp"] not in time_stamps:
             return True
         else:
-            logger.info('huh')
+            logger.info("huh")
             return False
     else:
-        logger.info('huh')
+        logger.info("huh")
         return False
 
+
 def addID(row):
-    with open('existing_ids.json', 'r') as j:
+    with open("existing_ids.json", "r") as j:
         d = json.load(j)
-    d[row['Office']].append(row['TimeStamp'])
-    with open('existing_ids.json', 'w') as j:
+    d[row["Office"]].append(row["TimeStamp"])
+    with open("existing_ids.json", "w") as j:
         json.dump(d, j, indent=4, sort_keys=True)
 
 
 def populatePhraseByForecast(forecast, session):
     """Individual INSERT statements via the ORM, calling upon last row id"""
-    db = DB(db_path='/home/jmiller/git/AFDTools/forecasts.db')
-    time_stamp_ = forecast.time_stamp.strftime('%Y%m%dT%H:%M:%S')
+    db = DB(db_path="/home/jmiller/git/AFDTools/forecasts.db")
+    time_stamp_ = forecast.time_stamp.strftime("%Y%m%dT%H:%M:%S")
     with db.connection as con:
         cur = con.cursor()
-        cur.execute(f'''SELECT * FROM Phrase 
+        cur.execute(
+            f"""SELECT * FROM Phrase 
                         WHERE Office == '{forecast.office.name}'
-                        AND TimeStamp == '{time_stamp_}';''')
+                        AND TimeStamp == '{time_stamp_}';"""
+        )
         rows = cur.fetchall()
     try:
 
@@ -206,18 +318,18 @@ def populatePhraseByForecast(forecast, session):
             logger.debug(f"Adding {rows[0]['TimeStamp']} from {rows[0]['Office']}")
             addID(rows[0])
     except IndexError:
-        logger.warning(f'Time Stamp <{time_stamp_}> not found in SQLite3 DB...')
+        logger.warning(f"Time Stamp <{time_stamp_}> not found in SQLite3 DB...")
         return
-    #session = Session(bind=engine)
+    # session = Session(bind=engine)
     extractions = list()
     total = 0
     for row in rows:
         extractions.append(
             Extraction(
                 forecast=forecast,
-                phrase=str(row['Phrase']),
-                start_index=int(row['StartIndex']),
-                end_index=int(row['EndIndex'])
+                phrase=str(row["Phrase"]),
+                start_index=int(row["StartIndex"]),
+                end_index=int(row["EndIndex"]),
             )
         )
 
@@ -230,7 +342,8 @@ def getOffice(name):
     session = Session(bind=engine)
     return session.query(Office).filter(Office.name == name).one()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     config = {
         "handlers": [
             {
@@ -239,37 +352,37 @@ if __name__ == '__main__':
                 "colorize": "True",
                 "backtrace": "True",
                 "catch": "True",
-                "level": "INFO"
+                "level": "INFO",
             },
             {
-                #"sink": f"{__file__.split('.')[0]}.log",
+                # "sink": f"{__file__.split('.')[0]}.log",
                 "sink": f"test.log",
                 "format": "<g>{time:YYYY-MM-DD HH:mm:ss.SSS}</> | <lvl>{level: <8}</> | <cyan>{name: <10}</><cyan>{function: <10}</><cyan>{line: <5}</> | <lvl>{message}</>",
                 "rotation": "100 MB",
-                "retention": 3
+                "retention": 3,
             },
         ],
-        "extra": {"user": "jmiller"}
+        "extra": {"user": "jmiller"},
     }
     logger.configure(**config)
 
     global engine
     engine = create_engine(DBURL, echo=False)
     session = Session(bind=engine)
-    #setup_database(echo=False)
-    #test_flush_no_pk()
-    #for office in OFFICES:
+    # setup_database(echo=False)
+    # test_flush_no_pk()
+    # for office in OFFICES:
     #    populateForecastByOffice(office)
-    #for office in OFFICES:
-        #logger.info(f'Inserting phrases for: {office}')
-        #office_ = session.query(Office).filter(Office.name == office).one()
-        #for ind, forecast in enumerate(office_.forecasts): 
-        #    populatePhraseByForecast(forecast, session)
-        #if ind == 2:
-        #    break
+    # for office in OFFICES:
+    # logger.info(f'Inserting phrases for: {office}')
+    # office_ = session.query(Office).filter(Office.name == office).one()
+    # for ind, forecast in enumerate(office_.forecasts):
+    #    populatePhraseByForecast(forecast, session)
+    # if ind == 2:
+    #    break
 
-    #stats = session.query(Status).filter(Status.extracted == 0).all()
-    #for status, extraction in session.query(Status, Extraction).\
+    # stats = session.query(Status).filter(Status.extracted == 0).all()
+    # for status, extraction in session.query(Status, Extraction).\
     #                                  filter(Status.forecast == Extraction.forecast).\
     #                                  filter(Status.):
     #    extractions = session.query(Extraction).filter(Extraction.forecast_id == status.forecast.id).all()
@@ -279,14 +392,13 @@ if __name__ == '__main__':
     #    else:
     #        logger.warning(f"Nothing extracted from {status.forecast.id}")
 
-    #session = Session(bind=engine)
-    #for row in session.query(Forecast).filter(Forecast.id == 1).all():
+    # session = Session(bind=engine)
+    # for row in session.query(Forecast).filter(Forecast.id == 1).all():
     #    row.status.unique=1
-    #session.flush()
-    #session.commit()
+    # session.flush()
+    # session.commit()
 
-
-    #for row in rows:
+    # for row in rows:
     #    f = Forecast(
     #        time_stamp=row['TimeStamp'],
     #        date_accessed=datetime.now(),
