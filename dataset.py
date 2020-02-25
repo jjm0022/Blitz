@@ -26,7 +26,6 @@ class Connection:
         unprocessed = (
             self.session.query(Status).filter(Status.in_dataset == 0).limit(limit)
         )
-        print(f"Found {len(unprocessed)} forecasts to be added to the dataset")
         for status in unprocessed:
             yield status
 
@@ -53,16 +52,15 @@ class Dataset(Connection):
         Connection.__init__(self)
 
         self.Annotation = collections.namedtuple(
-            "Annotation", ["start", "end", "label", "content", "id", "phrase"]
+            "Annotation", ["start", "end", "label", "id", "phrase"]
         )
 
         if dataset_path:
             self.dataset_path = dataset_path
         else:
-            project_path = os.path.join(os.environ["GIT_HOME"], "AFDTools")
-            self.dataset_path = os.path.join(
-                project_path, "data", "nws_phrase_dataest.jsonl"
-            )
+            assert os.path.exists("/usr/data"), "Create directory at /usr/data"
+            assert os.access("/usr/data", os.X_OK | os.W_OK), "Process does not have pemission to create file at /usr/data"
+            self.dataset_path = os.path.join("/usr", "data", "nws_phrases.jsonl")
 
     def add2Dataset(self, limit=1000):
         """
@@ -101,6 +99,7 @@ class Dataset(Connection):
 
                 with open(self.dataset_path, "a+") as t:
                     t.writelines(self.json_lines)
+                self.session.commit()
             except Exception as e:
                 print(e)
                 self.session.commit()
@@ -148,4 +147,4 @@ class Dataset(Connection):
 
 if __name__ == "__main__":
     d = Dataset()
-    d.add2Dataset(limit=10)
+    d.add2Dataset(limit=100)

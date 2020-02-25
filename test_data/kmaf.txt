@@ -1,0 +1,78 @@
+000
+FXUS64 KMAF 052328
+AFDMAF
+
+Area Forecast Discussion
+National Weather Service Midland/Odessa TX
+528 PM CST Thu Dec 5 2019
+
+.DISCUSSION...
+
+Please see 00Z aviation discussion below.
+
+&&
+
+.AVIATION...
+
+VFR will continue at all TAF sites for the next 24 hrs.
+Gusty winds will begin to wane after sunset and veer around
+to northwest as a frontal boundary passes thru the area.
+
+&&
+
+.PREV DISCUSSION... /issued 225 PM CST Thu Dec 5 2019/
+
+DISCUSSION...
+West winds are picking up across the area this afternoon ahead of
+a cold front that will move through the area tonight. Isolated low
+end advisory level winds are being seen across the area but will
+be too brief to issue an advisory as they will be diminishing
+shortly. The High Wind Warning in the Guadalupe Mountains will
+remain in effect however for the next several hours since winds in
+the higher elevations are quite a bit stronger.
+
+Temperatures behind the front will be cooler, but still above
+normal and combined with dry conditions will allow for a very
+pleasant weekend. Clouds increase Monday ahead of the next front
+due on Monday night keeping temps slightly cooler. The ECMWF and
+Canadian models are showing precipitation developing along and
+just behind the front as the rear entrance region of an upper jet
+max enhances lift across the Permian Basin which looks reasonable
+though the GFS is noticeably drier. Most of the area will be too
+warm for wintry precip though it could be close in the northern
+basin. Have kept the weather grids all rain for now but there is
+potential for slick conditions developing from Hobbs to Snyder
+early Tuesday that will have to be monitored. Precip ends during
+the day on Tuesday, which will be the coldest day of the week,
+followed by warmer temps Wed/Thu.
+
+Hennig
+
+&&
+
+.PRELIMINARY POINT TEMPS/POPS...
+Big Spring                     41  58  35  62 /   0   0   0   0
+Carlsbad                       39  58  37  65 /   0   0   0   0
+Dryden                         49  67  40  66 /   0   0   0   0
+Fort Stockton                  42  60  39  70 /   0   0   0   0
+Guadalupe Pass                 37  52  38  58 /   0   0   0   0
+Hobbs                          36  56  35  61 /   0   0   0   0
+Marfa                          35  62  33  68 /   0   0   0   0
+Midland Intl Airport           41  60  37  64 /   0   0   0   0
+Odessa                         41  59  37  64 /   0   0   0   0
+Wink                           39  61  36  66 /   0   0   0   0
+
+&&
+
+.MAF WATCHES/WARNINGS/ADVISORIES...
+NM...High Wind Warning until 6 PM MST this evening for Guadalupe
+     Mountains of Eddy County.
+
+TX...High Wind Warning until 6 PM MST this evening for Guadalupe
+     Mountains Above 7000 Feet-Guadalupe and Delaware Mountains.
+
+&&
+
+$$
+
+24

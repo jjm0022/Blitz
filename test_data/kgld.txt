@@ -1,0 +1,95 @@
+000
+FXUS63 KGLD 052312
+AFDGLD
+
+Area Forecast Discussion
+National Weather Service Goodland KS
+412 PM MST Thu Dec 5 2019
+
+.SHORT TERM...(This evening through Sunday)
+Issued at 225 PM MST Thu Dec 5 2019
+
+Tonight...precipitation chances come to an end during this as an
+upper trough and axis of 850-500mb moisture moves away from the
+area. A mix of liquid and frozen precipitation is expected very
+early this evening changing over to some snow showers mid evening as
+temperatures fall into the low 30s. As discussed yesterday, we`ll
+have to deal with widespread low clouds overnight. Model visibility
+forecasts suggest freezing fog developing after midnight mainly west
+of a line from around Trenton to Colby, Oakley and Leoti.
+Visibilities below 1/2 mile possible in far eastern Colorado. Low
+temperatures in the 20s.
+
+Friday...broad upper ridge spreads over the plains states with
+little if any cloudiness except near the surface where boundary
+layer remains fairly saturated in the morning before decreasing in
+the afternoon. For the overnight hours it saturates again mainly
+east of the CO/KS border. This will make for a difficult temperature
+forecast. At this time will stick with better performing bias
+corrected temperature grids the past 5 days which support highs in
+the low to mid 40s. Low temperatures in the low to upper 20s.
+
+Saturday...NAM wants to hold onto the stratus east of the CO/KS
+border during the day while the GFS does not, pretty typical.
+Otherwise little if any cloudiness. High temperatures generally in
+the 50s. I wont be surprised if these change as we may be
+battling a colder airmass in the northeast and warmer airmass
+moving in across the west. Low temperatures in the mid 20s to low
+30s. With 4-5mb 3 hour pressure falls I loaded the slightly higher
+consmos winds for the daytime period.
+
+Sunday...an upper level trough and cold front move through the area
+during the night. Before that happens we should see high
+temperatures range from the low 50s to around 60. Some spotty snow
+showers possible during the night and with a dry slot in the mid
+levels spotty seems the best way to describe precipitation chances.
+Low temperatures in the upper teens to mid 20s.
+
+.LONG TERM...(Monday through Thursday)
+Issued at 225 PM MST Thu Dec 5 2019
+
+Monday...some spotty showers possible in the morning before
+atmosphere dries out in the afternoon behind the upper trough
+passage. We`ll have some breezy to windy north winds through the
+day. High temperatures in the mid 30s to around 40. Low temperatures
+in the mid teens to near 20.
+
+Tuesday...upper ridging is advertised to be approaching the area
+ahead of a trough approaching the west coast. Dry conditions are
+expected with high temperatures in the mid 30s to near 40. Low
+temperatures in the mid to upper teens.
+
+Wednesday...some moderation in temperature is expected as slowly
+increasing 500mb heights approach the area. Currently advertising
+high temperatures in the 40s with low temperatures in the teens.
+
+Thursday...a weak upper trough is expected to move across the area.
+No weather is expected with high temperatures only in the mid 30s.
+
+&&
+
+.AVIATION...(For the 00Z TAFS through 00Z Friday evening)
+Issued at 409 PM MST Thu Dec 5 2019
+
+Low clouds and fog are expected to impact both KGLD and KMCK this
+evening through Friday morning, then returning to VFR early Friday
+afternoon. Surface winds are northwest to start, but then become
+light and variable later tonight. Confidence best in the lower
+ceilings, with lower confidence in fog developing due to the
+downslope component in the surface winds. Lowest flight
+categories expected to occur around 12z Friday morning, with a
+few hours of IFR or VLIFR possible.
+
+&&
+
+.GLD WATCHES/WARNINGS/ADVISORIES...
+KS...NONE.
+CO...NONE.
+NE...NONE.
+&&
+
+$$
+
+SHORT TERM...99
+LONG TERM...99
+AVIATION...024

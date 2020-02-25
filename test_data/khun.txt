@@ -1,0 +1,109 @@
+779
+FXUS64 KHUN 052316
+AFDHUN
+
+Area Forecast Discussion
+National Weather Service Huntsville AL
+516 PM CST Thu Dec 5 2019
+
+.UPDATE...
+For 00Z TAFS.
+
+&&
+
+.NEAR TERM...(Tonight)
+Issued at 254 PM CST Thu Dec 5 2019
+
+Quiet conditions late this afternoon across the Tennessee Valley as
+21z temperatures have warmed into the lower 60s under a mostly clear
+sky heading into the evening hours. Surface high pressure will be
+moving out of the southeastern region, causing increasing cloud cover
+and lowering temperatures to mid 40s overnight. This will also cause
+our current southerly wind to shift direction slightly towards the
+SE.
+
+.SHORT TERM...(Friday through Saturday)
+Issued at 254 PM CST Thu Dec 5 2019
+
+An approaching shortwave trough will cause increased cloud cover and
+rain showers to move into the area beginning in the late morning
+hours of Friday and continuing through the evening. Expected
+accumulated precipitation amounts between a 0.25" and 0.5".
+Temperatures will peak at the lower 50s in the late afternoon. As the
+rain subsides and the high pressure system moves northward off the
+coasts of the Carolinas Friday evening, the wind direction will shift
+from SE to a more easterly flow. Temperatures expected to fall into
+the mid 40s overnight as cloudy conditions linger into Saturday
+morning. A surface high will build in for Saturday, with tranquil
+conditions expected. However, lingering moisture in the lower
+atmosphere will result in broken decks of cloud cover through the
+day. Still, enough breaks will exist to allow us to warm to near
+seasonable levels in the mid to upper 50s.
+
+.LONG TERM...(Saturday night through Wednesday)
+Issued at 254 PM CST Thu Dec 5 2019
+
+The ridge of high pressure over the Ohio Valley will shift into the
+Mid-Atlantic region, inducing a southerly return flow over the
+Tennessee Valley region on Sunday. This will result in a brief
+warming trend as temperatures jump back into the upper 50s. Other
+than some scattered to broken decks of clouds, it should be a dry
+and fairly pleasant day with at least some peaks of sunshine. The
+next storm system will begin to take shape across the Southern Plains
+Sunday night and lifts NE into the Ohio Valley on Monday. An
+increasing southerly flow off the Gulf of Mexico will result in
+strong warm air advection as temperatures surge into the mid 60s
+along with good moisture return (dewpoints in the 50s). With the
+front still to the northwest of the area and only weak lift in place,
+expect Monday to be mainly dry with perhaps some scattered light
+showers that will increase, especially in the afternoon.
+
+The aforementioned cold front will sage into the region Monday night.
+As the best combination of lift and moisture are maximized during the
+00-12z Tuesday time period, we expect a period of moderate to heavy
+rain showers (with a few isolated thunderstorms) Monday evening
+through early Tuesday morning. There will be a few environmental
+factors that will support a threat for heavy rainfall and possibly
+some localized flooding during this period -- namely high PWAT
+values around 1.5", combined with deep southwesterly flow parallel to
+the frontal boundary. This, combined with some elevated CAPE), should
+result in the potential for some training convection and thus an area
+of enhanced precipitation over portions of the region. The latest
+QPF estimates for this period indicate between 1.5" to 2.25" of
+rainfall is possible which at the very least could be enough to get
+some of the Tennessee River tributaries to respond. We`ll have to
+keep a close eye on this on the coming days as models have been in
+pretty good agreement about the timing of this system.
+
+Thereafter, expect a significant cool down for Wednesday as a strong
+Canadian high pressure system builds south into the Tennessee Valley.
+This will result in highs in the 40s and lows back below the freezing
+mark once again.
+
+&&
+
+.AVIATION...(For the 00Z TAFS through 00Z Friday evening)
+Issued at 516 PM CST Thu Dec 5 2019
+
+High clouds continue to stream in from the west overnight, but no
+impacts in aviation are expected overnight. Leading edge of rain
+moves into western AL by 14z resulting in some light showers at first
+before becoming a steadier rain by midday. CIGs over both TAF sites
+gradually fall as rain intensity increases. Several short range
+guidance indicating the potential for IFR CIGs tomorrow afternoon,
+but low confidence at this forecast issuance hence kept low MVFR with
+some scattered IFR CIGs for now.
+
+&&
+
+.HUN WATCHES/WARNINGS/ADVISORIES...
+AL...NONE.
+TN...NONE.
+&&
+
+$$
+
+NEAR TERM...AMP.24
+SHORT TERM...AMP.24
+LONG TERM...AMP.24
+AVIATION...GH
