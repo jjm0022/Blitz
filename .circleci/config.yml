@@ -16,8 +16,11 @@ jobs:
       - run:
           name: Run Unit tests
           command: |
-            python clean_test.py
+            mkdir -p test-reports
+            pytest --disable-warnings --junitxml=test-reports/junit.xml
       - store_test_results:
+          path: test-reports
+      - store_artifacts:
           path: test-reports
 
 
