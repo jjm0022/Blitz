@@ -14,10 +14,6 @@ jobs:
           command: |
             pip install --user -r requirements.txt
       - run:
-          name: Install Spacy Engligh Library
-          command: |
-            python -m --user spacy download en_core_web_sm
-      - run:
           name: Run Unit tests
           command: |
             python clean_test.py
