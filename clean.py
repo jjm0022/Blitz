@@ -58,10 +58,6 @@ def fix_periods(text):
     clean_text = re.sub(r"\s\.", ".", text)
     return re.sub(r"\.{2,}", ".", clean_text)
 
-def fix_commas(text):
-    clean_text = re.sub(r"\s,", ".", text)
-    return re.sub(r",{2,}", ".", clean_text)
-
 def processText(text):
     """
     Cleans text
@@ -82,7 +78,7 @@ def processText(text):
     # Remove any spaces that occur before a period
     clean_text = fix_periods(clean_text)
     # Remove and spaces that occur before a comma
-    return fix_commas(clean_text)
+    return clean_text
 
 
 if __name__ == "__main__":
