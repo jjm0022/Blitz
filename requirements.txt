@@ -38,7 +38,6 @@ requests==2.23.0
 six==1.14.0
 soupsieve==2.0
 spacy==2.2.3
-srsly==1.0.0
 thinc==7.3.0
 tqdm==4.43.0
 traitlets==4.3.3
