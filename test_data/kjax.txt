@@ -1,0 +1,92 @@
+000
+FXUS62 KJAX 051931
+AFDJAX
+
+Area Forecast Discussion
+National Weather Service Jacksonville FL
+231 PM EST Thu Dec 5 2019
+
+.Near Term.../through Friday/...
+
+High pressure will move to the northeast tonight through Friday. An
+inverted trough is expected to develop over the coastal waters
+overnight, which will strengthen during the day Friday. This trough
+could result in a few showers near the coast, but most of this
+activity is expected to remain offshore. An area of low pressure
+will also gather along the central gulf coast Friday afternoon, with
+its associated warm front extending east toward SE GA.
+
+Temperatures will be near normal tonight, then above normal for
+Friday.
+
+&&
+
+.Short Term.../Friday night through Monday/...
+
+The forecast area will be between an inverted trough over the
+coastal waters and an area of low pressure to the west Friday night.
+A weak frontal boundary will extend between these two systems, but
+high pressure centered to the north will minimize the effect of this
+boundary, and largely push it to the south, but a few showers will
+be possible. The eastern inverted trough will move away to the east
+on Saturday, as the western low gets a little closer with an
+associated frontal boundary stretching across NE FL. High pressure
+will ridge into the area from the north Saturday, which will limit
+precipitation chances near the front. The ridge is expected to
+strengthen to the north Saturday night, then weaken and move
+northeast Sunday into Monday, while a weakening wave will be located
+to the west. While passing showers can not be ruled out Sunday into
+Monday, the chance will be low.
+
+Temperatures will trend above normal this period.
+
+&&
+
+.Long Term.../Monday night through Thursday/...
+
+High pressure will be to the east Monday night into Tuesday. Long
+range models diverge on timing of next frontal system, which will
+arrive in the Tuesday to Tuesday night timeframe. At this point,
+will favor average of solutions, with an arrival of weakening front
+Tuesday afternoon into Tuesday evening, passing to southeast by
+Wednesday morning, with strong high pressure building to the
+northwest behind it. The high is expected to build to the north
+Wednesday into Thursday, with resultant onshore flow producing
+potential for mainly coastal showers.
+
+Temperatures will trend above normal into Tuesday, then below normal
+for Wednesday and near to above normal for Thursday.
+
+&&
+
+.Marine...
+
+High pressure will move to the northeast through Friday, as an
+inverted trough develops over the coastal waters. This trough will
+move to the east Friday night into Saturday, as a ridge builds
+from the north. High pressure will be to the north Saturday night
+into Sunday, as another inverted trough develops over the coastal
+waters. High pressure will build to the east Monday night into
+Tuesday. A cold front will move through from the northwest Tuesday
+into Tuesday night.
+
+Rip Currents: Low Risk through Friday.
+
+&&
+
+.PRELIMINARY POINT TEMPS/POPS...
+
+AMG  40  70  49  66  48 /   0   0  10  20  10
+SSI  52  70  53  65  54 /   0   0  10  20  10
+JAX  46  74  51  69  54 /   0   0   0  20  10
+SGJ  52  74  54  70  58 /   0   0   0  20  30
+GNV  42  71  49  70  55 /   0   0   0  20  10
+OCF  41  72  48  72  54 /   0   0   0  20  10
+
+&&
+
+.JAX WATCHES/WARNINGS/ADVISORIES...
+FL...None.
+GA...None.
+AM...None.
+&&
