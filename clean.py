@@ -10,7 +10,7 @@ import unicodedata
 from pathlib import Path
 from collections import OrderedDict
 
-#nlp = spacy.load("en_core_web_sm", parse=True, tag=True, entity=True)
+# nlp = spacy.load("en_core_web_sm", parse=True, tag=True, entity=True)
 tokenizer = ToktokTokenizer()
 
 
@@ -31,6 +31,7 @@ def remove_stopwords(text, is_lower_case=False):
     filtered_text = " ".join(filtered_tokens)
     return filtered_text
 
+
 def split_sections(text):
     clean_text = ""
     sections = text.split("\n\n")
@@ -39,24 +40,31 @@ def split_sections(text):
             clean_text = clean_text + sec.strip() + " "
     return clean_text
 
+
 def remove_new_line_char(text):
     return re.sub(r"\n", " ", text)
+
 
 def remove_bad_characters(text):
     return re.sub(r"[^a-zA-Z\s\.\,\!\?\']", " ", text)
 
+
 def remove_multiple_periods(text):
     return re.sub(r"\.{2,}", " ", text)
+
 
 def remove_words_letters_numbers(text):
     return re.sub(r"(\b[A-Z]{1,}\d{1,}\b)", " ", text)
 
+
 def remove_multiple_spaces(text):
     return re.sub(r"\s{2,}", " ", text)
+
 
 def fix_periods(text):
     clean_text = re.sub(r"\s\.", ".", text)
     return re.sub(r"\.{2,}", ".", clean_text)
+
 
 def processText(text):
     """
