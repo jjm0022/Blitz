@@ -13,6 +13,9 @@ jobs:
           name: Install Python Dependencies
           command: |
             pip install --user -r requirements.txt
+      - run:
+          name: Install Spacy Engligh Library
+          command: |
             python -m spacy download en_core_web_sm
       - run:
           name: Run Unit tests
