@@ -85,7 +85,7 @@ def processText(text):
     # Remove any areas with more than one white-space back to back
     clean_text = remove_multiple_periods(clean_text)
     # Remove any spaces that occur before a period
-    clean_text = fix_periods(clean_text)
+    clean_text = remove_space_before_punctuation(clean_text)
     # Remove and spaces that occur before a comma
     return clean_text
 
