@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Download NLTK Data
           command: |
-            python -m nltk.downloader -d /usr/local/share/nltk_data stopwords
+            python -m nltk.downloader stopwords
       - run:
           name: Run Unit tests
           command: |
