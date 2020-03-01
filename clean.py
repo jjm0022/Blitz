@@ -29,6 +29,7 @@ def remove_stopwords(text, is_lower_case=False):
             token for token in tokens if token.lower() not in stopword_list
         ]
     filtered_text = " ".join(filtered_tokens)
+    filtered_text = remove_space_before_punctuation(filtered_text)
     return filtered_text
 
 
@@ -61,8 +62,8 @@ def remove_multiple_spaces(text):
     return re.sub(r"\s{2,}", " ", text)
 
 
-def fix_periods(text):
-    clean_text = re.sub(r"\s\.", ".", text)
+def remove_space_before_punctuation(text):
+    clean_text = re.sub(r'\s+([?.!,\'"])', r'\1', text) 
     return re.sub(r"\.{2,}", ".", clean_text)
 
 

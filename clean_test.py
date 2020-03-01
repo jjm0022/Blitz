@@ -29,11 +29,15 @@ class TestClean(unittest.TestCase):
         string = clean.remove_multiple_spaces(test_string)
         self.assertEqual(string, 'This Little light of mine ')
 
-    def test_fix_periods(self):
-        test_string = 'This. little . Light.. of min4  ..'
-        string = clean.fix_periods(test_string)
-        self.assertEqual(string, 'This. little. Light. of min4 .')
-
+    def test_remove_space_before_punctuation(self):
+        test_string = 'This , little . Light.. of min4 !'
+        string = clean.remove_space_before_punctuation(test_string)
+        self.assertEqual(string, 'This, little. Light. of min4!')
+    
+    def test_remove_stopwords(self):
+        test_string = "Tonight, any snow showers in Western MA and far northwest CT's will gradually diminish."
+        string = clean.remove_stopwords(test_string)
+        self.assertEqual(string, "Tonight, snow showers Western far northwest CT' gradually diminish.")
 
 if __name__ == "__main__":
     unittest.main()
