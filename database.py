@@ -24,7 +24,7 @@ class DB:
             self.session = Session(bind=self.engine)
         else:
             self.engine = create_engine(url, echo=False)
-            self.session = Session(bind=engine)
+            self.session = Session(bind=self.engine)
 
         self.create_tables([Forecast, Office, Status, Extraction])
 
