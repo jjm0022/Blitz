@@ -4,7 +4,7 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  run_tests:
+  build:
     docker:
       - image: circleci/python:3.7.4
     steps:
@@ -21,6 +21,10 @@ jobs:
           name: Populate Office Information
           command: |
             python utils.py
+  test:
+    docker:
+      - image: circleci/python:3.7.4
+    steps:
       - run:
           name: Run Unit tests
           command: |
