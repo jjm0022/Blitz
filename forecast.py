@@ -6,6 +6,7 @@ from datetime import datetime
 from database import DB
 from database_definitions import Office, Forecast, Status
 from sqlalchemy.exc import UnboundExecutionError
+from sqlalchemy import desc
 
 
 class Connection:
@@ -15,16 +16,16 @@ class Connection:
 
     def getMostRecent(self):
         """
-        Returns the row-dict for the most recent forcast
+        Returns the most recent forecast added to the db
         """
-        forecasts = (
+        forecast = (
             self.session.query(Forecast)
             .filter(Office.id == Forecast.office_id)
             .filter(Office.name == self.office.name)
-            .order_by(Forecast.time_stamp)
-            .all()
+            .order_by(Forecast.time_stamp.desc())
+            .first()
         )
-        return forecasts[-1]
+        return forecast
 
     def insert(self, forecast):
         self.session.add(forecast)
