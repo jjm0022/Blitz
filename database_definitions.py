@@ -4,9 +4,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, Session, deferred
 
 Base = declarative_base()
-# DBURL = 'mysql+mysqldb://jmiller:b14z3r5@10.0.0.100:3306/plexserverdb'
-DBURL = "mysql+mysqldb://root:b14z3r5@10.0.0.100:3306/testdb"
-
 
 class Forecast(Base):
     __tablename__ = "forecast"
