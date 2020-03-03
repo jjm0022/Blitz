@@ -18,6 +18,10 @@ jobs:
           command: |
             python -m nltk.downloader stopwords
       - run:
+          name: Populate Office Information
+          command: |
+            python utils.py
+      - run:
           name: Run Unit tests
           command: |
             mkdir -p test-reports

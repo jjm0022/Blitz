@@ -41,6 +41,10 @@ class DB:
                 t, sqlalchemy.ext.declarative.api.DeclarativeMeta
                 ), f"'{t}' must be an instance of sqlalchemy.ext.declarative.api.DeclarativeMeta"
 
-            print(f"Creating {t.__tablename__} if it does not exist")
-            t.__table__.create(bind=self.engine, checkfirst=True)
+            if t.__tablename__ in self.engine.table_names():
+                print(f"table '{t.__tablename__}' already exists")
+                continue
+            else:
+                print(f"Creating table '{t.__tablename__}'")
+                t.__table__.create(bind=self.engine, checkfirst=True)
             

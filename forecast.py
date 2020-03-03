@@ -5,6 +5,7 @@ from datetime import datetime
 
 from database import DB
 from database_definitions import Office, Forecast, Status
+from sqlalchemy.exc import UnboundExecutionError
 
 
 class Connection:
@@ -35,11 +36,17 @@ class Downloader(Connection):
         """
         """
         Connection.__init__(self)
-        self.office = self.session.query(Office).filter_by(name=office).one()
+        try:
+            self.office = self.session.query(Office).filter_by(name=office).one()
+        except UnboundExecutionError as e:
+            utils.populateOfficeTable()
         self.url = f"https://forecast.weather.gov/product.php?site={self.office.name}&issuedby={self.office.name}&product=AFD&format=txt&version=1&glossary=0"
         self.text = None
         self.current_time_stamp = None
-        self.previous = self.getMostRecent()
+        try:
+            self.previous = self.getMostRecent()
+        except UnboundExecutionError as e:
+            print('Unable to get most recent forecast')
 
     def download(self):
         """
