@@ -5,6 +5,8 @@ from datetime import datetime
 
 from database import DB
 from database_definitions import Office, Forecast, Status
+from sqlalchemy.exc import UnboundExecutionError
+from sqlalchemy import desc
 
 
 class Connection:
@@ -14,16 +16,16 @@ class Connection:
 
     def getMostRecent(self):
         """
-        Returns the row-dict for the most recent forcast
+        Returns the most recent forecast added to the db
         """
-        forecasts = (
+        forecast = (
             self.session.query(Forecast)
             .filter(Office.id == Forecast.office_id)
             .filter(Office.name == self.office.name)
-            .order_by(Forecast.time_stamp)
-            .all()
+            .order_by(Forecast.time_stamp.desc())
+            .first()
         )
-        return forecasts[-1]
+        return forecast
 
     def insert(self, forecast):
         self.session.add(forecast)
@@ -35,11 +37,17 @@ class Downloader(Connection):
         """
         """
         Connection.__init__(self)
-        self.office = self.session.query(Office).filter_by(name=office).one()
+        try:
+            self.office = self.session.query(Office).filter_by(name=office).one()
+        except UnboundExecutionError as e:
+            utils.populateOfficeTable()
         self.url = f"https://forecast.weather.gov/product.php?site={self.office.name}&issuedby={self.office.name}&product=AFD&format=txt&version=1&glossary=0"
         self.text = None
         self.current_time_stamp = None
-        self.previous = self.getMostRecent()
+        try:
+            self.previous = self.getMostRecent()
+        except UnboundExecutionError as e:
+            print('Unable to get most recent forecast')
 
     def download(self):
         """
@@ -54,7 +62,7 @@ class Downloader(Connection):
             if response.status_code != 200:
                 print(f"{response.status_code} error; Reason: {response.reason}")
                 return None
-            elif self.parse(response):
+            elif self.parse(response.text):
                 print(
                     f"Downloaded forecast from {self.office.name} valid for {self.current_time_stamp.strftime('%c')}"
                 )
@@ -78,24 +86,38 @@ class Downloader(Connection):
         recent = self.getMostRecent()
         return self.current_time_stamp > dateparse(self.previous.time_stamp)
 
-    def parse(self, request):
+    def to_forecast(self, office_id, text, forecast_time=None):
         """
-        parses the forecast text
+        Returns a database_definitions.Forecast object
         """
-        soup = BeautifulSoup(request.text, features="lxml")
+        office = self.to_office(office_id, session=self.session)
+        if not forecast_time:
+            forecast_time = self.get_forecast_time(text)
 
-        for tag in soup.findAll("pre"):
-            self.text = tag.text
+        return Forecast(
+                id=office_id + "-" + forecast_time.strftime("%Y-%m-%d %H:%M:%S"),
+                office=office,
+                status=Status(unique=0, clean=0, extracted=0, in_dataset=0),
+                time_stamp=forecast_time,
+                date_accessed=datetime.now(),
+                raw_text=text,
+                )
 
-        self.current_time_stamp = self.getForecastTime(self.text)
-
-        if not self.current_time_stamp:
-            print("Could not identify a timestamp for {}".format(self.office.name))
-            return False
+    def to_office(self, office_id, session=None):
+        """
+        Returns a database_definitions.Office object
+        """
+        if not session:
+            db = DB()
+            session = self.session
+            office = session.query(Office).filter_by(name=office_id).one()
+            session.close()
         else:
-            return True
+            print(session)
+            office = session.query(Office).filter_by(name=office_id).one()
+        return office
 
-    def getForecastTime(self, forecast_text):
+    def get_forecast_time(self, forecast_text):
         """
         Searches the forecast text for the forecast issue time
         """
@@ -114,6 +136,7 @@ class Downloader(Connection):
         for line in lines:
             try:
                 # Remove the timezone since python doesn't like CST/CDT and others
+                # TODO: Find a way to store TZ information
                 line = " ".join(line.split(" ")[:2] + line.split(" ")[3:])
                 timestamp = datetime.strptime(line, "%I%M %p %a %b %d %Y")
                 return timestamp

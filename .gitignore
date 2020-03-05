@@ -7,6 +7,8 @@
 *.jonsl
 *.jsonl
 
+config.ini
+
 
 .vscode/*
 **/__pycache__
